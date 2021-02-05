@@ -1,0 +1,166 @@
+:root {
+    --background: #101013;
+    --color-tags-header: #181c27;
+    --primary-color: #f52d5b;
+    --color-font-white: #e7efff;
+    --color-font-secondary: #62809e;
+    --color-post-blue: #f52d5b;
+    --background-post: #1b202c;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: var(--background);
+    color: var(--color-font-white);
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+}
+
+.container {
+    width: 80vw;
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    flex-direction: column;
+}
+
+footer {
+    display: flex;
+    background-color: #181c27;
+    height: 40vh;
+    margin-top: 50px;
+    bottom: 0%;
+    width: 100%;
+    align-items: center;
+}
+
+footer .footer-area {
+    margin: 0 auto;
+    width: 80vw;
+    display: flex;
+    justify-content: space-between;
+}
+
+footer .footer-area .footer-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+footer .footer-area .footer-content:first-child {
+    display: flex;
+    flex: 2;
+}
+
+footer .footer-area .footer-content a {
+    padding: 10px;
+    color: var(--color-font-white);
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.container .tags-area {
+}
+
+.container .tags-area .tags {
+    font-size: 0.8rem;
+    padding: 10px;
+    color: var(--color-font-white);
+    text-decoration: none;
+    background-color: var(--color-tags-header);
+    border-radius: 4px;
+    height: 100%;
+    font-weight: 700;
+}
+
+.container .tags-area .tags:hover {
+    background-color: #282f41;
+}
+
+.container .checklist {
+    margin-top: 50px;
+}
+
+.container .checklist .checklist-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container .checklist .checklist-header h2 {
+    font-size: 2rem;
+}
+.container .checklist .checklist-header p {
+    color: var(--color-font-white);
+    font-weight: 400;
+}
+
+.container .checklist p {
+    font-size: 1rem;
+    color: var(--color-font-secondary);
+    margin: 10px 0px;
+}
+
+.container .checklist span {
+    color: var(--color-font-white);
+    margin: 10px 0px;
+}
+
+.container .checklist-posts {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 16px;
+}
+
+.container .checklist-posts .post {
+    background-color: var(--background-post);
+    border-radius: 4px;
+    padding: 35px;
+    border-top: 5px solid var(--color-post-blue);
+}
+
+.container .checklist-posts .post .post-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.container .checklist-posts .post .post-header h3 {
+    color: var(--color-font-secondary);
+    font-weight: 700;
+}
+.container .checklist-posts .post .post-header p {
+    font-weight: 400;
+    color: var(--color-font-secondary);
+    font-size: 0.9rem;
+}
+
+.container .checklist-posts .post .post-body h3 {
+    margin: 10px 0px;
+}
+.container .checklist-posts .post .post-body article {
+    color: var(--color-font-secondary);
+    font-weight: 400;
+    margin: 10px 0px;
+}
+
+.container .checklist-posts .post .post-footer {
+    display: flex;
+}
+
+.container .checklist-posts .post .post-footer .post-tags {
+    background-color: var(--color-post-blue);
+    border-radius: 4px;
+    color: var(--color-font-white);
+    font-weight: 700;
+    font-size: 0.8rem;
+    padding: 5px;
+    margin-right: 5px;
+}

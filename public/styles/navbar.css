@@ -1,0 +1,52 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--color-font-secondary);
+}
+nav .menu {
+    display: flex;
+    justify-content: space-around;
+    flex: 1;
+    font-size: 1rem;
+}
+
+nav .menu .search-area .icon-search {
+    position: absolute;
+    top: 10px;
+    right: 0px;
+    content: url("/assets/icons/icons8-search.svg");
+    width: 20px;
+    fill: aliceblue;
+}
+nav .menu .search-area {
+    position: relative;
+}
+nav .menu li .search {
+    background-color: rgba(0, 0, 0, 0);
+    padding: 8px 0px;
+    font-size: 20px;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid var(--color-font-secondary);
+    color: var(--color-font-secondary);
+}
+nav .menu li:hover {
+    color: white;
+    transition: color 500ms ease;
+}
+
+nav .menu li {
+    display: flex;
+    cursor: pointer;
+    list-style: none;
+    transition: color 500ms ease;
+}
+
+nav .logo {
+    display: flex;
+    content: url("../assets/img/kyan.png");
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+}
