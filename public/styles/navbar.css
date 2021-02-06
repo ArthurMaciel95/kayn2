@@ -45,7 +45,7 @@ nav .menu li {
 
 nav .logo {
     display: flex;
-    content: url("../assets/img/kyan.png");
+    content: url("../assets/img/kyan1.png");
     width: 200px;
     height: 150px;
     object-fit: cover;

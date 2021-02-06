@@ -19,7 +19,6 @@ body {
     font-family: "Inter", sans-serif;
     font-size: 16px;
     -webkit-font-smoothing: antialiased;
-    font-smoothing: antialiased;
 }
 
 .container {
@@ -76,10 +75,12 @@ footer .footer-area .footer-content a {
     border-radius: 4px;
     height: 100%;
     font-weight: 700;
+    transition: background-color 300ms ease;
 }
 
 .container .tags-area .tags:hover {
     background-color: #282f41;
+    transition: background-color 300ms ease;
 }
 
 .container .checklist {
