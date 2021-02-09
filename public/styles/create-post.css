@@ -1,0 +1,37 @@
+form {
+    width: 50%;
+    display: flex;
+    margin: 0 auto;
+    background-color: var(--background-post);
+    padding: 20px;
+    border-radius: 4px;
+}
+form input,
+select,
+textarea {
+    margin-top: 1rem;
+    padding: 10px 5px;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    border-radius: 4px;
+    background-color: var(--color-tags-header);
+    border: none;
+    color: var(--color-font-secondary);
+    resize: vertical;
+}
+
+.wrap-form {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px;
+    background-color: var(--color-font-secondary);
+    border-radius: 4px;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+}

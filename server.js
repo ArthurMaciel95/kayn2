@@ -1,10 +1,8 @@
 const mongoose = require("mongoose");
 
-const app = require("./app");
-require("dotenv").config();
 const PORT = process.env.PORT || 4455;
 
-require("./src/models/PostModel");
+require("dotenv").config();
 
 mongoose
     .connect(process.env.DATABASE, {
@@ -17,6 +15,10 @@ mongoose
         app.emit("pronto");
     })
     .catch((e) => console.log(e));
+
+require("./src/models/PostModel");
+
+const app = require("./app");
 
 app.on("pronto", () => {
     app.listen(PORT, () => {

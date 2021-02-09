@@ -1,133 +1,71 @@
 <%- include('include/header')%>
     <main class="container">
-        <nav>
-            <ul class="logo">
-                <li>
-                    Logo
-                </li>
-            </ul>
-            <ul class="menu">
-                <li class="search-area">
-                    <i class="icon-search"></i>
-                    <input class="search" type="text" name="" id="">
-                </li>
+        <%- include('include/navbar')%>
 
-                <li>Categories</li>
-                <li>Github</li>
-                <li>Login</li>
-            </ul>
-        </nav>
+            <section class="tags-area">
+                <% dataIndex.tags.forEach( tag=>{%>
+                    <a href="/?t=<%= tag._id %>" class="tags">
+                        #<%= tag._id%>
+                    </a>
+                    <%})%>
 
-        <section class="tags-area">
-            <a href="#" class="tags">#portifolio</a>
-            <a href="#" class="tags">#case-use</a>
-            <a href="#" class="tags">#style-code</a>
-            <a href="#" class="tags">#style-code</a>
-            <a href="#" class="tags">#style-code</a>
-            <a href="#" class="tags">#style-code</a>
-            <a href="#" class="tags">#style-code</a>
-        </section>
+            </section>
 
-        <section class="checklist">
-            <div class="checklist-header">
-                <h2>Checklists</h2>
-                <p>Suggestion checklist</p>
-            </div>
-            <p>there are <span>62</span> of them and counting! </p>
-        </section>
+            <section class="checklist">
+                <div class="checklist-header">
+                    <h2>Posts</h2>
+                    <a href="">Suggestion checklist <i class="fa fa-external-link"></i></a>
+                </div>
+                <div class="info-area">
+                    <p>there are <span>
+                            <%= dataIndex.sumPost.total %>
+                        </span> of them and counting! </p>
+                    <a href="/create-post" class="create-post">Create Post</a>
+                </div>
+            </section>
 
-        <section class="checklist-posts">
-            <div class="post">
-                <div class="post-header">
-                    <h3>Back-end</h3>
-                    <p>information</p>
-                </div>
-                <div class="post-body">
-                    <h3>A Remote Day of Atolye15</h3>
-                    <article>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, officia nulla porro soluta odio vel aliquid eligendi aut tempore quo?</article>
-                </div>
-                <div class="post-footer">
-                    <span class="post-tags">
-                        #404error
-                    </span>
-                    <span class="post-tags">
-                        #style-code
-                    </span>
-                    <span class="post-tags">
-                        #code-clen
-                    </span>
+            <section class="checklist-posts">
+                <%if(dataIndex.posts.length===0) {%>
+                    <h1>Não a post a serem mostrados</h1>
+                    <%} else {%>
+                        <% dataIndex.posts.forEach( post=> {%>
 
-                </div>
-            </div>
+                            <div class="post">
 
-            <div class="post">
-                <div class="post-header">
-                    <h3>Tittle</h3>
-                    <p>information</p>
-                </div>
-                <div class="post-body">
-                    <h3>A Remote Day of Atolye15</h3>
-                    <article>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, officia nulla porro soluta odio vel aliquid eligendi aut tempore quo?</article>
-                </div>
-                <div class="post-footer">
-                    <span class="post-tags">
-                        #404error
-                    </span>
-                    <span class="post-tags">
-                        #style-code
-                    </span>
-                    <span class="post-tags">
-                        #code-clen
-                    </span>
+                                <div class="post-header">
+                                    <h3>
+                                        <%= post.category%>
+                                    </h3>
+                                    <p>
+                                        <%= post.createDate%>
+                                    </p>
+                                </div>
+                                <div class="post-body">
+                                    <h3>
+                                        <%= post.title%>
+                                    </h3>
+                                    <article>
+                                        <%= post.body%>
+                                    </article>
+                                </div>
+                                <div class="post-footer">
+                                    <!-- <span class="post-tags">
+                                #404error
+                            </span> -->
+                                    <% post.tags.forEach(tag=>{%>
+                                        <span class="post-tags">
+                                            #<%= tag%>
+                                        </span>
+                                        <%});%>
+                                </div>
+                                <a href="/post/<%= post._id %>" class="anchor-post">acess link</a>
 
-                </div>
-            </div>
-            <div class="post">
-                <div class="post-header">
-                    <h3>Back-end</h3>
-                    <p>information</p>
-                </div>
-                <div class="post-body">
-                    <h3>A Remote Day of Atolye15</h3>
-                    <article>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, officia nulla porro soluta odio vel aliquid eligendi aut tempore quo?</article>
-                </div>
-                <div class="post-footer">
-                    <span class="post-tags">
-                        #404error
-                    </span>
-                    <span class="post-tags">
-                        #style-code
-                    </span>
-                    <span class="post-tags">
-                        #code-clen
-                    </span>
+                            </div>
 
-                </div>
-            </div>
-            <div class="post">
-                <div class="post-header">
-                    <h3>Back-end</h3>
-                    <p>information</p>
-                </div>
-                <div class="post-body">
-                    <h3>A Remote Day of Atolye15</h3>
-                    <article>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, officia nulla porro soluta odio vel aliquid eligendi aut tempore quo?</article>
-                </div>
-                <div class="post-footer">
-                    <span class="post-tags">
-                        #404error
-                    </span>
-                    <span class="post-tags">
-                        #style-code
-                    </span>
-                    <span class="post-tags">
-                        #code-clen
-                    </span>
+                            <%})%>
+                                <%}%>
 
-                </div>
-            </div>
-
-        </section>
+            </section>
     </main>
 
     <%- include('include/footer')%>

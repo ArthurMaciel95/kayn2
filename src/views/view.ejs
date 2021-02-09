@@ -1,0 +1,33 @@
+<%- include('include/header')%>
+    <main class="container">
+        <%- include('include/navbar')%>
+
+            <section class="container-view">
+                <h2>
+                    <%= postData.data.title %>
+                </h2>
+                <p class="paragraph-view">
+                    <%= postData.data.subtitle %>
+                </p>
+
+                <section class="page-view-tags-area">
+                    <% postData.data.tags.forEach(tag=>{ %>
+                        <span class="tags">
+                            #<%= tag %>
+                        </span>
+                        <%})%>
+
+                </section>
+                <article>
+                    <%= postData.data.body %>
+                </article>
+            </section>
+
+
+
+
+
+
+    </main>
+
+    <%- include('include/footer')%>

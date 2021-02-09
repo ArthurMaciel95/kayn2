@@ -1,8 +1,10 @@
 const mongoose = require("mongoose");
-const slug = require("slug");
+const moment = require("moment");
+
+// const slug = require("slug");
 mongoose.Promise = global.Promise;
 
-const ObjectId = mongoose.SchemaTypes.ObjectId;
+// const ObjectId = mongoose.SchemaTypes.ObjectId;
 
 const postSchema = new mongoose.Schema({
     title: {
@@ -18,35 +20,24 @@ const postSchema = new mongoose.Schema({
         required: "o corpo precisa ser preenchido",
     },
     tags: [String],
-    author: {
-        type: ObjectId,
-        ref: "User",
-    },
-    createDate: { type: Date, default: Date.now },
-});
-
-postSchema.pre("save", async function (next) {
-    if (this.isModified("title")) {
-        this.slug = slug(this.title, { lower: true });
-
-        const slugRegex = new RegExp(`^(${this.slug})((-[0-9]{1,}$)?)$`, "i");
-
-        const postsWithSlug = await this.constructor.find({ slug: slugRegex });
-
-        if (postsWithSlug.length > 0) {
-            this.slug = `${this.slug}-${postsWithSlug.length + 1}`;
-        }
-    }
-
-    next();
+    // author: {
+    //     type: ObjectId,
+    //     ref: "User",
+    // },
+    category: { type: String, trim: true, required: true },
+    createDate: { type: String, default: moment().format("L") },
 });
 
 postSchema.statics.getTagsList = function () {
     return this.aggregate([
         { $unwind: "$tags" },
         { $group: { _id: "$tags", count: { $sum: 1 } } },
-        { $sort: { count: -1, _id: 1 } },
+        { $sort: { count: -1 } },
     ]);
+};
+
+postSchema.statics.getNumberPost = function () {
+    return this.aggregate([{ $group: { _id: null, total: { $sum: 1 } } }]);
 };
 
 module.exports = mongoose.model("Post", postSchema);

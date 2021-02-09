@@ -1,0 +1,26 @@
+<%- include('include/header')%>
+
+    <%- include('include/navbar')%>
+        <main class="container">
+            <form method="POST">
+
+                <input type="text" placeholder="tittle" name="title">
+                <input type="text" name="subtitle" placeholder="subtitle">
+                <textarea placeholder="body" name="body" rows="7"> </textarea>
+                <div class="wrap-form">
+                    <input type="text" name="tags" placeholder="tags">
+                    <select name="category" id="">
+                        <option value="Front-end">Front-end</option>
+                        <option value="Back-end">Back-end</option>
+                        <option value="Desing">Desing</option>
+                        <option value="DevOps">DevOps</option>
+                        <option value="API">API</option>
+                    </select>
+                </div>
+                <button type="submit">enviar</button>
+            </form>
+
+
+        </main>
+
+        <%- include('include/footer')%>
