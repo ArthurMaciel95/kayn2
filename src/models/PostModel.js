@@ -25,7 +25,7 @@ const postSchema = new mongoose.Schema({
     //     ref: "User",
     // },
     category: { type: String, trim: true, required: true },
-    createDate: { type: String, default: moment().format("L") },
+    createDate: { type: String, default: moment().format("DD/MM/YY") },
 });
 
 postSchema.statics.getTagsList = function () {
