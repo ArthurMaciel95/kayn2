@@ -4,8 +4,9 @@
     --primary-color: #f52d5b;
     --color-font-white: #e7efff;
     --color-font-secondary: #62809e;
-    --color-post-blue: #f52d5b;
+    --color-post-blue: #2d7df5;
     --background-post: #1b202c;
+    --archor-color: #bf3263;
 }
 
 * {
@@ -133,7 +134,7 @@ footer .footer-area .footer-content a {
 .container .checklist-posts .post {
     background-color: var(--background-post);
     border-radius: 4px;
-    padding: 35px;
+    padding: 25px;
     border-top: 5px solid var(--color-post-blue);
 }
 
@@ -198,9 +199,14 @@ footer .footer-area .footer-content a {
     border-bottom: 2px solid var(--color-tags-header);
     margin-bottom: 10px;
 }
+.anchor-area {
+    margin-top: 10px;
+    display: flex;
+    justify-content: flex-end;
+}
 
-/* .anchor-post {
-    background-color: var(--color-post-blue);
+.anchor-post {
+    background-color: var(--archor-color);
     border-radius: 4px;
     color: var(--color-font-white);
     font-weight: 700;
@@ -208,4 +214,4 @@ footer .footer-area .footer-content a {
     padding: 5px;
     margin-right: 5px;
     text-decoration: none;
-} */
+}

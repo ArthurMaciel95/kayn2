@@ -10,6 +10,10 @@ exports.index = async (req, res) => {
     };
 
     dataIndex.tag = req.query.t;
+    const postFilter =
+        dataIndex.tag !== undefined ? { tags: dataIndex.tag } : {};
+
+    console.log(typeof dataIndex.tag);
 
     const tags = await Post.getTagsList();
     dataIndex.tags = tags;
@@ -18,7 +22,7 @@ exports.index = async (req, res) => {
     dataIndex.sumPost = sumPost;
     console.log(sumPost);
 
-    const posts = await Post.find();
+    const posts = await Post.find(postFilter);
     dataIndex.posts = posts;
 
     res.render("index", { dataIndex });
