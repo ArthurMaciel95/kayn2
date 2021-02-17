@@ -64,9 +64,6 @@ footer .footer-area .footer-content a {
     font-size: 0.9rem;
 }
 
-.container .tags-area {
-}
-
 .container .tags-area .tags {
     font-size: 0.8rem;
     padding: 10px;
@@ -165,6 +162,8 @@ footer .footer-area .footer-content a {
     color: var(--color-font-secondary);
     font-weight: 400;
     margin: 10px 0px;
+    display: flex;
+    word-wrap: break-word;
 }
 
 .container .checklist-posts .post .post-footer {

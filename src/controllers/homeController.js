@@ -16,13 +16,13 @@ exports.index = async (req, res) => {
     console.log(typeof dataIndex.tag);
 
     const tags = await Post.getTagsList();
-    dataIndex.tags = tags;
-
+    const posts = await Post.find(postFilter);
     const sumPost = await Post.getNumberPost();
+
+    dataIndex.tags = tags;
     dataIndex.sumPost = sumPost;
     console.log(sumPost);
 
-    const posts = await Post.find(postFilter);
     dataIndex.posts = posts;
 
     res.render("index", { dataIndex });

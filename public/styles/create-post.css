@@ -9,9 +9,10 @@ form {
 form input,
 select,
 textarea {
-    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-top: 5px;
     padding: 10px 5px;
-    font-size: 1.3rem;
+    font-size: 0.9rem;
     display: flex;
     align-items: center;
     border-radius: 4px;
@@ -19,6 +20,9 @@ textarea {
     border: none;
     color: var(--color-font-secondary);
     resize: vertical;
+}
+form label {
+    color: var(--color-font-secondary);
 }
 
 .wrap-form {
@@ -34,4 +38,13 @@ button {
     border: none;
     color: white;
     font-size: 1.2rem;
+}
+
+.break-line-tags {
+    display: flex;
+    flex-direction: column;
+}
+
+.break-line-tags small {
+    color: var(--color-font-secondary);
 }

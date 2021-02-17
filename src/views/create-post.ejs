@@ -3,20 +3,30 @@
     <%- include('include/navbar')%>
         <main class="container">
             <form method="POST">
-
-                <input type="text" placeholder="tittle" name="title">
-                <input type="text" name="subtitle" placeholder="subtitle">
-                <textarea placeholder="body" name="body" rows="7"> </textarea>
+                <label for="title">Title:</label>
+                <input type="text" name="title">
+                <label for="subtitle">Subtitle:</label>
+                <input type="text" name="subtitle">
+                <label for="message">Message:</label>
+                <textarea spellckeck="true" name="body" rows="7"> </textarea>
                 <div class="wrap-form">
-                    <input type="text" name="tags" placeholder="tags">
-                    <select name="category" id="">
+
+                    <div class="break-line-tags">
+                        <label for="tags">Tag(s):</label>
+                        <input type="text" name="tags">
+                        <small>use the "," to make more tags</small>
+                    </div>
+
+                    <select name="category" id="" sele>
                         <option value="Front-end">Front-end</option>
                         <option value="Back-end">Back-end</option>
                         <option value="Desing">Desing</option>
                         <option value="DevOps">DevOps</option>
                         <option value="API">API</option>
                     </select>
+
                 </div>
+
                 <button type="submit">enviar</button>
             </form>
 
