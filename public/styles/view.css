@@ -24,3 +24,21 @@
     flex-direction: row;
     margin: 10px 0px;
 }
+
+.container-view article {
+    width: 60%;
+
+    margin: 0 auto;
+}
+
+.edit-post {
+    background-color: var(--background-post-hover);
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    color: var(--color-font-white);
+    font-weight: 400;
+    display: flex;
+    width: fit-content;
+    align-items: flex-end;
+}

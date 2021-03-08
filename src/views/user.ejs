@@ -1,0 +1,33 @@
+<%- include('include/header')%>
+
+    <%- include('include/navbar')%>
+        <main class="container">
+
+            <section class="users">
+                <%if(!obj.users){%>
+                    <h1>não há usuário bando de dados</h1>
+                    <%} else {%>
+                        <%obj.users.forEach( user=>{%>
+                            <div class="user-container">
+                                <img src="./assets/img/avatar-male.jpg" alt="">
+                                <div>
+                                    <h3>
+                                        <%= user.name %>
+                                    </h3>
+                                    <p>
+                                        <%= user.email%>
+                                    </p>
+                                </div>
+
+                            </div>
+
+                            <%})%>
+
+                                <%}%>
+
+            </section>
+
+
+        </main>
+
+        <%- include('include/footer')%>

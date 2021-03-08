@@ -1,7 +1,7 @@
 <%- include('include/header')%>
     <main class="container">
         <%- include('include/navbar')%>
-
+            <a href="/post/edit/<%=postData.data._id%>" class="edit-post">Edit Post</a>
             <section class="container-view">
                 <h2>
                     <%= postData.data.title %>

@@ -1,8 +1,7 @@
 const mongoose = require("mongoose");
 
-const PORT = process.env.PORT || 4455;
-
 require("dotenv").config();
+const PORT = process.env.PORT || 4455;
 
 mongoose
     .connect(process.env.DATABASE, {
@@ -17,6 +16,7 @@ mongoose
     .catch((e) => console.log(e));
 
 require("./src/models/PostModel");
+require("./src/models/UserModel");
 
 const app = require("./app");
 

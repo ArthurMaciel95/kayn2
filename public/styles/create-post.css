@@ -1,12 +1,16 @@
-form {
+.create-post-form {
     width: 50%;
     display: flex;
     margin: 0 auto;
     background-color: var(--background-post);
     padding: 20px;
     border-radius: 4px;
+    flex-direction: column;
 }
-form input,
+
+.container {
+}
+.create-post-form .input-form,
 select,
 textarea {
     margin-bottom: 1rem;
@@ -21,7 +25,7 @@ textarea {
     color: var(--color-font-secondary);
     resize: vertical;
 }
-form label {
+.create-post-form label {
     color: var(--color-font-secondary);
 }
 
@@ -47,4 +51,13 @@ button {
 
 .break-line-tags small {
     color: var(--color-font-secondary);
+}
+
+.form-page-post {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    justify-content: center;
+    padding: 20px;
+    background-color: var(--background-post);
 }

@@ -9,7 +9,6 @@ exports.view = async (req, res) => {
     const onePost = await Post.findOne({ _id: req.params._id });
 
     postData.data = onePost;
-    console.log(onePost);
 
     res.render("view", { postData });
 };

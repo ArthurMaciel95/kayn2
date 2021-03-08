@@ -9,9 +9,12 @@
             <i class="icon-search"></i>
             <input class="search" type="text" name="" id="">
         </li>
-
-        <li>Categories</li>
-        <li>Github</li>
-        <li>Login</li>
+        <% h.forEach( link=> {%>
+            <li>
+                <a href="<%= link.slug %>">
+                    <%= link.name%>
+                </a>
+            </li>
+            <%})%>
     </ul>
 </nav>

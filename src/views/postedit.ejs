@@ -1,0 +1,88 @@
+<%- include('include/header')%>
+
+    <%- include('include/navbar')%>
+
+        <main class="container">
+            <form class="create-post-form" method="POST" class="form-page-post">
+
+                <label class="new-input-label" for="title">
+                    <input class="new-input" type="text" name="title" autocomplete="off" value="<%= obj.edit.title%>">
+                    <p>Title</p>
+                </label>
+                <label class="new-input-label" for="subtitle">
+                    <input class="new-input" type="text" name="subtitle" autocomplete="off" value="<%= obj.edit.subtitle%>">
+                    <p>Subtitle</p>
+                </label>
+
+                <label for="message">Message:</label>
+                <textarea spellckeck="true" name="body" rows="7"><%= obj.edit.body%></textarea>
+                <div class="wrap-form">
+
+                    <div class="break-line-tags">
+                        <label class="new-input-label" for="tags">
+                            <input class="new-input" type="text" name="tags" autocomplete="off" value="<%= obj.edit.tags%>">
+                            <p>Tags</p>
+                        </label>
+
+                        <small>use the "," to make more tags</small>
+                    </div>
+
+                    <select name="category" id="" sele>
+                        <option value="Front-end">Front-end</option>
+                        <option value="Back-end">Back-end</option>
+                        <option value="Desing">Desing</option>
+                        <option value="DevOps">DevOps</option>
+                        <option value="General">General</option>
+                        <option value="Project Management">Project Management</option>
+                        <option value="Desing">Desing</option>
+                        <option value="Marketing">Marketing</option>
+                        <option value="Mobile">Mobile</option>
+                        <option value="Human Resources">Human Resources</option>
+
+                    </select>
+
+                </div>
+
+                <button type="submit">enviar</button>
+            </form>
+
+
+        </main>
+        <!-- <main class="container-create-post">
+            <form class="create-post-form" method="POST">
+                <label for="title">Title:</label>
+                <input class=".input-form" type="text" name="title" value="<%= obj.edit.title %>">
+                <label for="subtitle">Subtitle:</label>
+                <input class=".input-form" type="text" name="subtitle" value="<%= obj.edit.subtitle%>">
+                <label for="message">Message:</label>
+                <textarea spellckeck="true" name="body" rows="7"><%= obj.edit.body%></textarea>
+                <div class="wrap-form">
+
+                    <div class="break-line-tags">
+                        <label for="tags">Tag(s):</label>
+                        <input class=".input-form" type="text" name="tags" value="<%= obj.edit.tags %>">
+                        <small>use the "," to make more tags</small>
+                    </div>
+
+                    <select name="<%= obj.edit.category %>" id="" sele>
+                        <option value="Front-end">Front-end</option>
+                        <option value="Back-end">Back-end</option>
+                        <option value="Desing">Desing</option>
+                        <option value="DevOps">DevOps</option>
+                        <option value="General">General</option>
+                        <option value="Project Management">Project Management</option>
+                        <option value="Desing">Desing</option>
+                        <option value="Marketing">Marketing</option>
+                        <option value="Mobile">Mobile</option>
+                        <option value="Human Resources">Human Resources</option>
+                    </select>
+
+                </div>
+
+                <button type="submit">enviar</button>
+            </form>
+
+
+        </main> -->
+
+        <%- include('include/footer')%>

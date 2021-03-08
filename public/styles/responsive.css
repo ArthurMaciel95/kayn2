@@ -11,7 +11,21 @@
     .container {
         width: 90vw;
     }
+    nav .logo {
+        display: flex;
+        content: url("../assets/img/kyanMobile.png");
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+    }
+    nav {
+        height: 25vh;
+    }
 
     .tags-area {
+        display: flex;
+        margin-top: 50px;
+        flex-wrap: wrap;
+        gap: 5px;
     }
 }

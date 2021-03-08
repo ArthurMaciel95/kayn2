@@ -2,11 +2,12 @@
     --background: #101013;
     --color-tags-header: #181c27;
     --primary-color: #f52d5b;
-    --color-font-white: #e7efff;
+    --color-font-white: #ebebeb;
     --color-font-secondary: #62809e;
     --color-post-blue: #2d7df5;
     --background-post: #1b202c;
-    --archor-color: #bf3263;
+    --background-post-hover: #282f41;
+    --archor-color: #3263bf;
 }
 
 * {
@@ -21,9 +22,12 @@ body {
     font-size: 16px;
     -webkit-font-smoothing: antialiased;
 }
+a {
+    text-decoration: none;
+}
 
 .container {
-    width: 80vw;
+    width: 85vw;
     display: flex;
     margin: 0 auto;
     justify-content: center;
@@ -72,7 +76,6 @@ footer .footer-area .footer-content a {
     background-color: var(--color-tags-header);
     border-radius: 4px;
     height: 100%;
-    font-weight: 700;
     transition: background-color 300ms ease;
     margin-right: 5px;
 }
@@ -123,15 +126,18 @@ footer .footer-area .footer-content a {
 
 .container .checklist-posts {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+}
 
+.grid-column-2 {
+    grid-template-columns: repeat(2, 1fr);
+    display: grid;
     gap: 16px;
 }
 
 .container .checklist-posts .post {
     background-color: var(--background-post);
     border-radius: 4px;
-    padding: 25px;
+    padding: 35px;
     border-top: 5px solid var(--color-post-blue);
 }
 
@@ -141,12 +147,12 @@ footer .footer-area .footer-content a {
 .container .checklist-posts .post .post-header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+
     margin-bottom: 15px;
 }
 
 .container .checklist-posts .post .post-header h3 {
-    color: var(--color-font-secondary);
+    color: var(--color-font-white);
     font-weight: 700;
 }
 .container .checklist-posts .post .post-header p {
@@ -175,18 +181,21 @@ footer .footer-area .footer-content a {
     border-radius: 4px;
     color: var(--color-font-white);
     font-weight: 700;
-    font-size: 0.8rem;
-    padding: 5px;
+    font-family: inter, "Helvetica Nue", sans-serif;
+    font-size: 0.7rem;
+    padding: 4px 8px;
     margin-right: 5px;
 }
 
 .create-post {
-    background-color: var(--color-post-blue);
+    display: flex;
+    align-items: center;
+    background-color: var(--color-tags-header);
     border-radius: 4px;
     color: var(--color-font-white);
     font-weight: 700;
     font-size: 0.8rem;
-    padding: 5px;
+    padding: 10px;
     margin-right: 5px;
     text-decoration: none;
 }
@@ -195,7 +204,7 @@ footer .footer-area .footer-content a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 2px solid var(--color-tags-header);
+
     margin-bottom: 10px;
 }
 .anchor-area {
@@ -205,12 +214,74 @@ footer .footer-area .footer-content a {
 }
 
 .anchor-post {
-    background-color: var(--archor-color);
+    background-color: var(--color-post-blue);
     border-radius: 4px;
     color: var(--color-font-white);
-    font-weight: 700;
+    font-weight: 600;
     font-size: 0.8rem;
     padding: 5px;
     margin-right: 5px;
     text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+.anchor-post i {
+    font-size: 10px;
+    margin-right: 4px;
+}
+
+.wrap-form {
+    display: flex;
+}
+
+.wrap-form .label {
+    display: flex;
+}
+
+.new-input-label {
+    position: relative;
+}
+
+.new-input-label .new-input {
+    font-size: 1rem;
+    color: white;
+    background: transparent;
+    padding: 0.7rem 1.5rem 0.7rem 1.2rem;
+    outline: none;
+    border-radius: 0.5rem;
+    width: 100%;
+    font-size: 1rem;
+    margin-top: 15px;
+    border: 2px solid var(--color-tags-header);
+
+    transition: border-color 0.2s;
+}
+
+.new-input-label .new-input:focus {
+    border-color: var(--color-font-secondary);
+    transition: border-color 0.2s;
+}
+.new-input-label p {
+    color: #f9f9f9;
+
+    user-select: none;
+    position: absolute;
+
+    transform: translate(5%);
+    margin-left: 0.2rem;
+    padding: 0 0.4rem;
+    background-color: var(--background-post);
+    transition: top 0.2s, font-size 0.2s, color 0.2s;
+}
+
+.new-input-label .new-input:focus + p,
+.new-input-label .new-input:valid + p {
+    top: 10%;
+    font-size: 0.9rem;
+}
+
+.new-input-label .new-input:not(:focus) + p {
+    color: #7a7a7a56;
+    top: 45%;
+    font-size: 1.1rem;
 }

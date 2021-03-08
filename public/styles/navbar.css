@@ -21,6 +21,11 @@ nav .menu .search-area .icon-search {
 }
 nav .menu .search-area {
     position: relative;
+    border-radius: 4px;
+}
+
+nav .menu .search-area:focus {
+    border: rgb(111, 111, 111) solid 1px;
 }
 nav .menu li .search {
     background-color: rgba(0, 0, 0, 0);
@@ -28,10 +33,20 @@ nav .menu li .search {
     font-size: 1rem;
     outline: none;
     border: none;
+
     border-bottom: 2px solid var(--color-font-secondary);
     color: var(--color-font-secondary);
 }
-nav .menu li:hover {
+
+nav .menu li a {
+    color: var(--color-font-secondary);
+    text-decoration: none;
+    align-items: center;
+    display: flex;
+    transition: color 500ms ease;
+}
+
+nav .menu li a:hover {
     color: white;
     transition: color 500ms ease;
 }

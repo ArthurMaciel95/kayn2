@@ -1,0 +1,82 @@
+<%- include('include/header')%>
+
+    <%- include('include/navbar')%>
+        <main class="container">
+            <form class="create-post-form" method="POST">
+                <label class="new-input-label" for="cpf">
+                    <input class="new-input" type="text" name="cpf" autocomplete="off">
+                    <p>cpf</p>
+                </label>
+
+                <label class="new-input-label" for="name">
+                    <input class="new-input" type="text" name="name" autocomplete="off">
+                    <p>name</p>
+                </label>
+                <label class="new-input-label" for="email">
+                    <input class="new-input" type="text" name="email" autocomplete="off">
+                    <p>email</p>
+                </label>
+                <label class="new-input-label" for="password">
+                    <input class="new-input" type="password" name="password" autocomplete="off">
+                    <p>password</p>
+                </label>
+
+                <!-- <label for="cpf">Cpf:</label>
+                <input type="text" name="cpf">
+                <label for="name">Name:</label>
+                <input type="text" name="name">
+                <label for="email">E-mail:</label>
+                <input type="text" name="email" maxlength="33">
+                <label for="password">Password:</label>
+                <input type="password" name="password" maxlength="12"> -->
+                <section class="wrap-form">
+                    <label class="new-input-label" for="birthday">
+                        <input class="new-input" type="date" name="birthday" autocomplete="off">
+                        <p>birthday</p>
+                    </label>
+                    <label class="new-input-label" for="country">
+                        <input class="new-input" type="text" name="country" autocomplete="off">
+                        <p>country</p>
+                    </label>
+                    <!-- <label for="birthday">
+                        <p>Birthday:</p>
+                        <input type="date" name="birthday" id="birthday">
+                    </label>
+
+                    <label for="country">
+                        <p>Country:</p>
+                        <input type="text" name="country" id="country">
+                    </label> -->
+
+                </section>
+                <section class="wrap-form">
+                    <!-- <label for="city">
+                        <p>City:</p>
+                        <input type="text" name="city" id="city">
+                    </label> -->
+
+                    <label class="new-input-label" for="city">
+                        <input class="new-input" type="text" name="city" autocomplete="off">
+                        <p>city</p>
+                    </label>
+
+                    <label for="membership">
+                        <p>Membership:</p>
+                        <select name="membership" id="membership">
+                            <option value="Basic">Basic</option>
+                            <option value="Silver">Silver</option>
+                            <option value="Golden">Golden</option>
+                        </select>
+                    </label>
+
+                </section>
+
+
+
+                <button type="submit">Sign Up</button>
+            </form>
+
+
+        </main>
+
+        <%- include('include/footer')%>

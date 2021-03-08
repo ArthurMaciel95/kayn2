@@ -10,20 +10,27 @@ exports.index = async (req, res) => {
     };
 
     dataIndex.tag = req.query.t;
+
+    console.log(dataIndex.tag);
     const postFilter =
         dataIndex.tag !== undefined ? { tags: dataIndex.tag } : {};
 
-    console.log(typeof dataIndex.tag);
-
     const tags = await Post.getTagsList();
     const posts = await Post.find(postFilter);
-    const sumPost = await Post.getNumberPost();
+    const sumPost = await Post.countDocuments();
 
-    dataIndex.tags = tags;
     dataIndex.sumPost = sumPost;
-    console.log(sumPost);
+    dataIndex.tags = tags;
 
     dataIndex.posts = posts;
 
     res.render("index", { dataIndex });
+};
+
+exports.delete = async (req, res) => {
+    try {
+        await Post.findOneAndDelete({ id: req.params._id });
+    } catch (e) {
+        console.log(e);
+    }
 };

@@ -11,26 +11,30 @@
 
             </section>
 
-            <section class="checklist">
+            <section class="checklist ">
                 <div class="checklist-header">
                     <h2>Posts</h2>
                     <a href="">Suggestion checklist <i class="fa fa-external-link"></i></a>
                 </div>
                 <div class="info-area">
-                    <p>there are <span>
-                            <%= JSON.stringify(dataIndex.sumPost)[21] %>
-                        </span> of them and counting! </p>
+                    <p>there are
+                        <span>
+                            <%= dataIndex.sumPost %>
+                        </span> of them and counting!
+                    </p>
                     <a href="/create-post" class="create-post">Create Post</a>
                 </div>
             </section>
 
-            <section class="checklist-posts">
+            <section class="checklist-posts grid-column-2">
                 <%if(dataIndex.posts.length===0) {%>
-                    <h1>Não a post a serem mostrados</h1>
+                    <h1>Não há post a serem mostrados</h1>
                     <%} else {%>
                         <% dataIndex.posts.forEach( post=> {%>
 
                             <div class="post">
+                                <a href="/post/<%= post._id %>" class="anchor-full"></a>
+
 
                                 <div class="post-header">
                                     <h3>
@@ -49,9 +53,7 @@
                                     </article>
                                 </div>
                                 <div class="post-footer">
-                                    <!-- <span class="post-tags">
-                                #404error
-                            </span> -->
+
                                     <% post.tags.forEach(tag=>{%>
                                         <span class="post-tags">
                                             #<%= tag%>
@@ -59,7 +61,15 @@
                                         <%});%>
                                 </div>
                                 <div class="anchor-area">
-                                    <a href="/post/<%= post._id %>" class="anchor-post">acess link</a>
+
+
+                                    <form method="POST" action="/post/delete/<%= post._id%>">
+                                        <button type="submit" class="anchor-post">
+                                            <p>Delete</p>
+                                        </button>
+                                    </form>
+
+
                                 </div>
 
                             </div>
