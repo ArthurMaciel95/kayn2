@@ -1,8 +1,11 @@
 <%- include('include/header')%>
 
-    <%- include('include/navbar')%>
-        <main class="container">
+    <main class="container">
+        <%- include('include/navbar')%>
             <form class="create-post-form" method="POST">
+
+                <h3>Create an account now.</h3>
+                <small>just fill the fields for create your account</small>
                 <label class="new-input-label" for="cpf">
                     <input class="new-input" type="text" name="cpf" autocomplete="off">
                     <p>cpf</p>
@@ -77,6 +80,6 @@
             </form>
 
 
-        </main>
+    </main>
 
-        <%- include('include/footer')%>
+    <%- include('include/footer')%>

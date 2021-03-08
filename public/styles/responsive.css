@@ -8,6 +8,10 @@
     .container .checklist-posts {
         grid-template-columns: 1fr;
     }
+
+    .create-post-form {
+        width: 70%;
+    }
     .container {
         width: 90vw;
     }

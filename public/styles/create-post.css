@@ -13,8 +13,6 @@
 .create-post-form .input-form,
 select,
 textarea {
-    margin-bottom: 1rem;
-    margin-top: 5px;
     padding: 10px 5px;
     font-size: 0.9rem;
     display: flex;

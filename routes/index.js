@@ -15,6 +15,9 @@ router.post("/create-post", postController.postAction);
 router.get("/sign-up", userController.signUp);
 router.post("/sign-up", userController.singUpAction);
 
+router.get("/login", userController.login);
+router.post("/login", userController.loginAction);
+
 router.get("/post/edit/:_id", postController.edit);
 router.post("/post/edit/:_id", postController.editAction);
 

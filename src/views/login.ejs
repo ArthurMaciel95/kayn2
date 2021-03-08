@@ -1,0 +1,29 @@
+<%- include('include/header')%>
+
+    <main class="container">
+        <%- include('include/navbar')%>
+            <form class="create-post-form" method="POST">
+
+                <h3>Make the login</h3>
+                <small>just fill the fields for login your account</small>
+
+
+
+                <label class="new-input-label" for="email">
+                    <input class="new-input" type="text" name="email" autocomplete="off">
+                    <p>email</p>
+                </label>
+                <label class="new-input-label" for="password">
+                    <input class="new-input" type="password" name="password" autocomplete="off">
+                    <p>password</p>
+                </label>
+
+
+
+                <button type="submit">Login</button>
+            </form>
+
+
+    </main>
+
+    <%- include('include/footer')%>
