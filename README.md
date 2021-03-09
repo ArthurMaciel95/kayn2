@@ -6,4 +6,6 @@
 
 [img]https://i.imgur.com/q5qI2vL.png[/img]
 
-[Imgur](https://imgur.com/q5qI2vL)
+[Imgur]()
+
+<img align="center" src="https://imgur.com/q5qI2vL"></br>
