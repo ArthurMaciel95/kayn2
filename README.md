@@ -8,4 +8,4 @@
 
 [Imgur]()
 [img]https://i.imgur.com/rHUQGYf.png[/img]
-<img align="center" src="https://imgur.com/q5qI2vL"></br>
+<img align="center" src="https://i.imgur.com/rHUQGYf.png"></br>
