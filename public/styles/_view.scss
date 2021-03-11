@@ -1,0 +1,45 @@
+.container-view {
+    display: flex;
+    flex-direction: column;
+    background-color: $backgroundPost;
+    padding: 20px;
+    border-radius: 4px;
+
+    .paragraph-view {
+        color: $colorFontSecondary;
+    }
+
+    .tags {
+        padding: 8px;
+        background-color: $primaryColor;
+        font-size: 0.8rem;
+        border-radius: 4px;
+        width: fit-content;
+        margin-right: 5px;
+        font-weight: 700;
+    }
+
+    .page-view-tags-area {
+        display: flex;
+        flex-direction: row;
+        margin: 10px 0px;
+    }
+
+    article {
+        width: 60%;
+    
+        margin: 0 auto;
+    }
+}
+
+.edit-post {
+    background-color: $backgroundPostHover;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    color: $colorFontWhite;
+    font-weight: 400;
+    display: flex;
+    width: fit-content;
+    align-items: flex-end;
+}
