@@ -1,0 +1,36 @@
+footer {
+    display: flex;
+    background-color: #181c27;
+    height: 40vh;
+    margin-top: 50px;
+    bottom: 0%;
+    width: 100%;
+    align-items: center;
+
+    .footer-area {
+        margin: 0 auto;
+        width: 80vw;
+        display: flex;
+        justify-content: space-between;
+
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+
+
+            &:first-child{
+                display: flex;
+                flex: 2;
+            }
+        }
+
+        a{
+            padding: 10px;
+            color: var(--color-font-white);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+    }
+}

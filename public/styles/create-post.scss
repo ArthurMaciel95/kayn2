@@ -1,0 +1,69 @@
+@import './main';
+@import './navbar';
+@import './footer';
+@import './category';
+@import './responsive';
+@import './user';
+@import './view';
+
+
+.create-post-form {
+    width: 50%;
+    display: flex;
+    margin: 0 auto;
+    background-color: var(--background-post);
+    padding: 20px;
+    border-radius: 4px;
+    flex-direction: column;
+
+    label{
+        color: var(--color-font-secondary);
+    }
+
+    .input-form,
+    select,
+    textarea {
+        padding: 10px 5px;
+        font-size: 0.9rem;
+        display: flex;
+        align-items: center;
+        border-radius: 4px;
+        background-color: var(--color-tags-header);
+        border: none;
+        color: var(--color-font-secondary);
+        resize: vertical;
+    }
+
+}
+
+.wrap-form {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+
+.break-line-tags {
+    display: flex;
+    flex-direction: column;
+
+    small {
+        color: var(--color-font-secondary);
+    }
+
+}
+
+.form-page-post {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    justify-content: center;
+    padding: 20px;
+    background-color: var(--background-post);
+}
+.container-create-post {
+    display: flex;
+    width: 85vw;
+    margin: 0px auto;
+    justify-content: center;
+}

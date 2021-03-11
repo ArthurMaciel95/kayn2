@@ -1,4 +1,4 @@
-.container .users .user-container img {
+.container-page-user .users .user-container img {
     width: 50px;
     height: 50px;
     object-fit: cover;
@@ -6,13 +6,13 @@
     margin-right: 10px;
 }
 
-.container .users {
+.container-page-user .users {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
     flex-wrap: wrap;
 }
-.container .users .user-container {
+.container-page-user .users .user-container {
     padding: 15px;
     border-radius: 4px;
 
@@ -22,12 +22,12 @@
     border-left: var(--primary-color) 4px solid;
     transition: background-color 0.5s ease;
 }
-.container .users .user-container:hover {
+.container-page-user .users .user-container:hover {
     background-color: var(--background-post-hover);
     transition: background-color 0.5s ease;
 }
 
-.container .users .user-container p {
+.container-page-user .users .user-container p {
     color: var(--color-font-secondary);
     font-size: 0.8rem;
 }

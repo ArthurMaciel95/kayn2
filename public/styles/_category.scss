@@ -8,10 +8,6 @@
     margin-bottom: 20px;
 }
 
-.post-header h3 {
-    color: var(--color-font-white);
-    margin-bottom: 10px;
-}
 .post {
     position: relative;
     border-top: none;
@@ -23,16 +19,22 @@
     left: 0px;
     width: 100%;
     height: 100%;
+    &:hover + .post {
+        background-color: var(--background-post-hover);
+    }
 }
 
-.anchor-full:hover + .post {
-    background-color: var(--background-post-hover);
-}
 
-.post-header p {
-    font-size: 1rem;
-}
+
 .post-header {
     display: flex;
     flex-direction: column;
+
+    p{
+        font-size: 1rem;
+    }
+    h3{
+        color: var(--color-font-white);
+        margin-bottom: 10px;
+    }
 }
