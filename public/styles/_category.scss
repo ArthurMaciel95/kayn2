@@ -20,11 +20,9 @@
     width: 100%;
     height: 100%;
     &:hover + .post {
-        background-color: var(--background-post-hover);
+        background-color: $backgroundPostHover;
     }
 }
-
-
 
 .post-header {
     display: flex;

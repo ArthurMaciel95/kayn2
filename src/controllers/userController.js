@@ -12,7 +12,7 @@ exports.singUpAction = async (req, res) => {
         const userAreadyExists = await User.findOne({ email: req.body.email });
 
         if (userAreadyExists) {
-            return res.send({ message: "user aready exists" });
+            return res.send({ message: "user aready exists in databse" });
         }
     } catch (e) {
         console.error(e);
@@ -37,7 +37,32 @@ exports.login = (req, res) => {
 };
 
 exports.loginAction = async (req, res) => {
-    res.redirect("/");
+    try{
+        const UserExist = await User.findOne({email: req.body.email})
+
+        if(!UserExist){
+            return res.send({
+                message:"User don't exist in databse"
+            })
+        }
+        
+        const password = bcryptjs.compareSync(req.body.password, UserExist.password);
+        console.log(password);
+        if(!password){
+            return  res.send({
+                message:"password is not correct"
+            })
+        } else {
+            res.send({
+                message:"login success"
+            })
+        }
+        return res.redirect('/users')
+    }catch(e){
+        console.log(e)
+    }
+
+   
 };
 
 //###################################/

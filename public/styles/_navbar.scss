@@ -3,7 +3,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: var(--color-font-secondary);
+    color:$colorFontSecondary;
 
     .logo{
         display: flex;
@@ -28,7 +28,7 @@ nav {
 
             a{
                 position: relative;
-                color: var(--color-font-secondary);
+                color: $colorFontSecondary;
                 text-decoration: none;
                 align-items: center;
                 display: flex;
@@ -44,7 +44,7 @@ nav {
                     display: flex;
                     content:'';
                     height:1px;
-                    background: var(--primary-color) ;
+                    background: $primaryColor ;
                     position:absolute;
                     bottom: 0px;
                     left: 0px;
@@ -58,8 +58,8 @@ nav {
                 font-size: 1rem;
                 outline: none;
                 border: none;
-                border-bottom: 2px solid var(--color-font-secondary);
-                color: var(--color-font-secondary);
+                border-bottom: 2px solid $colorFontSecondary;
+                color: $colorFontSecondary;
              }
         }
     

@@ -11,13 +11,13 @@
     width: 50%;
     display: flex;
     margin: 0 auto;
-    background-color: var(--background-post);
+    background-color: $backgroundPost;
     padding: 20px;
     border-radius: 4px;
     flex-direction: column;
 
     label{
-        color: var(--color-font-secondary);
+        color: $colorFontSecondary;
     }
 
     .input-form,
@@ -28,9 +28,9 @@
         display: flex;
         align-items: center;
         border-radius: 4px;
-        background-color: var(--color-tags-header);
+        background-color: $colorTagsHeader;
         border: none;
-        color: var(--color-font-secondary);
+        color: $colorFontSecondary;
         resize: vertical;
     }
 
@@ -48,7 +48,7 @@
     flex-direction: column;
 
     small {
-        color: var(--color-font-secondary);
+        color: $colorFontSecondary;
     }
 
 }
@@ -59,7 +59,7 @@
     width: 50%;
     justify-content: center;
     padding: 20px;
-    background-color: var(--background-post);
+    background-color: $backgroundPost;
 }
 .container-create-post {
     display: flex;
