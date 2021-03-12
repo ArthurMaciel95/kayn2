@@ -640,7 +640,7 @@ footer .footer-area a {
 
 @media (max-width: 1024px) {
   .container .checklist-posts {
-    -ms-grid-columns: (1fr)[2];
+  
         grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -678,6 +678,28 @@ footer .footer-area a {
         flex-wrap: wrap;
     gap: 5px;
   }
+}
+
+.message-error {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-content: center;
+  height: 40vh;
+}
+
+.message-error h1 {
+  color: #f52d5b;
+  font-size: 5rem;
+}
+
+.message-error p {
+  color: #62809e;
+  font-size: 2rem;
 }
 
 .create-post-form {

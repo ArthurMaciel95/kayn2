@@ -1,0 +1,15 @@
+.message-error{
+    display: flex;
+    align-items: center;
+    height: 40vh;
+    flex-direction: column;
+    h1{
+        color: $primaryColor;
+        font-size: 5rem;
+    }
+    
+    p{
+        color:$colorFontSecondary;
+        font-size: 2rem;
+    }
+}

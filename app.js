@@ -6,6 +6,7 @@ const morgan = require("morgan");
 const cors = require("cors");
 const helpers = require("./src/helpers/navbarLinks");
 const { middlewareGlobal } = require("./src/middlewares/globalMiddleware");
+const pageNotFound = require('./src/middlewares/pageNotFound')
 
 app.use(cors());
 
@@ -17,6 +18,8 @@ app.set("views", path.resolve(__dirname, "src", "views"));
 app.use(middlewareGlobal);
 
 app.use("/", routes);
+
+app.use(pageNotFound.page404)
 
 app.set("view engine", "ejs");
 
