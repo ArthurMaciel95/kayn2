@@ -49,7 +49,7 @@ exports.loginAction = async (req, res) => {
         const UserExist = await User.findOne({email: req.body.email})
 
         if(!UserExist){
-            req.flash('error', 'Usuário não existe')
+            req.flash('error', 'Email ou senha estão incorretos')
             return res.redirect("/login");
         }
         

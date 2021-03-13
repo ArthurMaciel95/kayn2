@@ -259,6 +259,7 @@ a {
       -ms-user-select: none;
           user-select: none;
   position: absolute;
+  pointer-events: none;
   -webkit-transform: translate(5%);
           transform: translate(5%);
   margin-left: 0.2rem;
@@ -289,8 +290,8 @@ a {
   transition: border-color 0.2s;
 }
 
-.new-input-label .new-input:focus + p,
-.new-input-label .new-input:valid + p {
+.new-input-label .new-input:focus + p, .new-input-label .new-input:valid,
+.new-input-label .new-input:-webkit-autofill + p {
   top: 10%;
   font-size: 0.9rem;
 }
@@ -724,6 +725,22 @@ button {
   font-size: 0.9rem;
 }
 
+.success {
+  margin-top: 5px;
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: solid 1px #1c7e1c;
+  background-color: #1eb31e;
+}
+
+.error {
+  margin-top: 5px;
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: solid 1px #d34c42;
+  background-color: #922e27;
+}
+
 .create-post-form {
   width: 50%;
   display: -webkit-box;
@@ -755,7 +772,7 @@ button {
       -ms-flex-align: center;
           align-items: center;
   border-radius: 4px;
-  background-color: #181c27;
+  background: #181c27;
   border: none;
   color: #62809e;
   resize: vertical;

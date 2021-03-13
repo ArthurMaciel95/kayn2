@@ -3,18 +3,18 @@
     <main class="container">
         <%- include('include/navbar')%>
             <form class="create-post-form" method="POST">
-                <%- include('include/message')%>
                 <h3>Make the login</h3>
                 <small>just fill the fields for login your account</small>
 
+                <%- include('include/message')%>
 
 
                 <label class="new-input-label" for="email">
-                    <input class="new-input" type="text" name="email" autocomplete="off">
+                    <input class="new-input" type="text" name="email" autocomplete="off" required>
                     <p>email</p>
                 </label>
                 <label class="new-input-label" for="password">
-                    <input class="new-input" type="password" name="password" autocomplete="off">
+                    <input class="new-input" type="password" name="password" autocomplete="off" required>
                     <p>password</p>
                 </label>
 
