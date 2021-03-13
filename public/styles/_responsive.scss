@@ -27,6 +27,13 @@
 
     .create-post-form {
         width: 70%;
+
+        button{
+            padding:10px;
+            background-color: $backgroundPostHover;
+            color: $colorFontWhite;
+            width: 100%;
+        }
     }
     .tags-area {
         display: flex;

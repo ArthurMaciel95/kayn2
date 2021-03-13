@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const User = mongoose.model("User");
 const bcryptjs = require("bcryptjs");
+// const multer = require('multer')
 
 // REGISTER SECTION
 exports.signUp = async (req, res) => {
@@ -12,10 +13,17 @@ exports.singUpAction = async (req, res) => {
         const userAreadyExists = await User.findOne({ email: req.body.email });
 
         if (userAreadyExists) {
-            return res.send({ message: "user aready exists in databse" });
+            req.flash('error', 'Usuário já existente')
+            return res.redirect('/sign-up')
         }
     } catch (e) {
         console.error(e);
+    }
+
+    if (req.body.password !== req.body['password-repeat']) {
+        req.flash('error', 'Os Campos password precisão ser iguais');
+        res.redirect('/sign-up')
+        return;
     }
 
     const salt = bcryptjs.genSaltSync();
@@ -27,7 +35,7 @@ exports.singUpAction = async (req, res) => {
     } catch (err) {
         console.log(err);
     }
-
+    req.flash('success', 'Usuário cadastrado com sucesso!')
     res.redirect("/");
 };
 
@@ -41,21 +49,18 @@ exports.loginAction = async (req, res) => {
         const UserExist = await User.findOne({email: req.body.email})
 
         if(!UserExist){
-            return res.send({
-                message:"User don't exist in databse"
-            })
+            req.flash('error', 'Usuário não existe')
+            return res.redirect("/login");
         }
         
         const password = bcryptjs.compareSync(req.body.password, UserExist.password);
         console.log(password);
         if(!password){
-            return  res.send({
-                message:"password is not correct"
-            })
+            req.flash('error', 'Senha Incorreta')
+            res.redirect("/login");
         } else {
-            res.send({
-                message:"login success"
-            })
+            req.flash('success', 'Logado com sucesso')
+            res.redirect("/login");
         }
         return res.redirect('/users')
     }catch(e){

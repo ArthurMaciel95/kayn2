@@ -1,0 +1,17 @@
+<%if(error.length > 0) {%>
+    <div class="errors">
+        <% error.forEach(msg =>{%>
+            <%- msg%>
+        <%}); %>
+    </div>
+<% }%>
+    
+    
+    
+<%if(success.length > 0) {%>
+    <div class="success">
+        <% success.forEach(msg =>{%>
+            <%- msg%>
+        <%}); %>
+    </div>
+<% }%>

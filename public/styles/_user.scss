@@ -2,6 +2,7 @@
     display: flex;
     width: 80vw;
     margin: 0 auto;
+    flex-direction: column;
     .users {
         display: grid;
         grid-template-columns: repeat(4, 1fr);

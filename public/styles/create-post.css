@@ -528,6 +528,10 @@ footer .footer-area a {
   display: flex;
   width: 80vw;
   margin: 0 auto;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .container-page-user .users {
@@ -640,7 +644,7 @@ footer .footer-area a {
 
 @media (max-width: 1024px) {
   .container .checklist-posts {
-  
+    -ms-grid-columns: (1fr)[2];
         grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -669,6 +673,12 @@ footer .footer-area a {
   .create-post-form {
     width: 70%;
   }
+  .create-post-form button {
+    padding: 10px;
+    background-color: #282f41;
+    color: #ebebeb;
+    width: 100%;
+  }
   .tags-area {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -684,12 +694,14 @@ footer .footer-area a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  justify-content: center;
   height: 40vh;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .message-error h1 {
@@ -700,6 +712,16 @@ footer .footer-area a {
 .message-error p {
   color: #62809e;
   font-size: 2rem;
+}
+
+button {
+  margin-top: 10px;
+  padding: 10px 15px;
+  background-color: #282f41;
+  border-radius: 5px;
+  color: #ebebeb;
+  border: none;
+  font-size: 0.9rem;
 }
 
 .create-post-form {

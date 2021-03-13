@@ -3,7 +3,7 @@
     <main class="container">
         <%- include('include/navbar')%>
             <form class="create-post-form" method="POST">
-
+                <%- include('include/message')%>
                 <h3>Create an account now.</h3>
                 <small>just fill the fields for create your account</small>
                 <label class="new-input-label" for="cpf">
@@ -11,17 +11,22 @@
                     <p>cpf</p>
                 </label>
 
-                <label class="new-input-label" for="name">
+                <label class="new-input-label" >
                     <input class="new-input" type="text" name="name" autocomplete="off">
                     <p>name</p>
                 </label>
-                <label class="new-input-label" for="email">
+                <label class="new-input-label">
                     <input class="new-input" type="text" name="email" autocomplete="off">
                     <p>email</p>
                 </label>
-                <label class="new-input-label" for="password">
+                <label class="new-input-label">
                     <input class="new-input" type="password" name="password" autocomplete="off">
                     <p>password</p>
+                </label>
+                
+                <label class="new-input-label">
+                    <input class="new-input" type="password" name="password-repeat" autocomplete="off">
+                    <p>repeat password</p>
                 </label>
 
                 <!-- <label for="cpf">Cpf:</label>
