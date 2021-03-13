@@ -691,6 +691,35 @@ footer .footer-area a {
   }
 }
 
+.wrap-form-sign {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.wrap-form-sign .input-avatar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.wrap-form-sign .input-avatar img {
+  border-radius: 50%;
+  width: 9rem;
+  height: 9rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 .message-error {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -726,7 +755,7 @@ button {
 }
 
 .success {
-  margin-top: 5px;
+  margin: 10px 0px;
   padding: 10px 15px;
   border-radius: 5px;
   border: solid 1px #1c7e1c;
@@ -734,11 +763,19 @@ button {
 }
 
 .error {
-  margin-top: 5px;
+  margin: 10px 0px;
   padding: 10px 15px;
   border-radius: 5px;
   border: solid 1px #d34c42;
   background-color: #922e27;
+}
+
+.container-profile img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 9rem;
+  height: 9rem;
+  border-radius: 50%;
 }
 
 .create-post-form {

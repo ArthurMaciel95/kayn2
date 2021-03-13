@@ -13,7 +13,7 @@ exports.singUpAction = async (req, res) => {
         const userAreadyExists = await User.findOne({ email: req.body.email });
 
         if (userAreadyExists) {
-            req.flash('error', 'Usuário já existente')
+            req.flash('error', 'User Already Exist')
             return res.redirect('/sign-up')
         }
     } catch (e) {
@@ -21,7 +21,7 @@ exports.singUpAction = async (req, res) => {
     }
 
     if (req.body.password !== req.body['password-repeat']) {
-        req.flash('error', 'Os Campos password precisão ser iguais');
+        req.flash('error', 'The passwords fields need to be equal');
         res.redirect('/sign-up')
         return;
     }
@@ -35,7 +35,7 @@ exports.singUpAction = async (req, res) => {
     } catch (err) {
         console.log(err);
     }
-    req.flash('success', 'Usuário cadastrado com sucesso!')
+    req.flash('success', 'Successfully registered user')
     res.redirect("/");
 };
 
@@ -49,17 +49,17 @@ exports.loginAction = async (req, res) => {
         const UserExist = await User.findOne({email: req.body.email})
 
         if(!UserExist){
-            req.flash('error', 'Email ou senha estão incorretos')
+            req.flash('error', 'Email or password are incorrect')
             return res.redirect("/login");
         }
         
         const password = bcryptjs.compareSync(req.body.password, UserExist.password);
         console.log(password);
         if(!password){
-            req.flash('error', 'Senha Incorreta')
+            req.flash('error', 'Incorrect password')
             res.redirect("/login");
         } else {
-            req.flash('success', 'Logado com sucesso')
+            req.flash('success', 'Success login')
             res.redirect("/login");
         }
         return res.redirect('/users')
@@ -82,3 +82,17 @@ exports.users = async (req, res) => {
 
     res.render("user", { obj });
 };
+
+exports.profile= async(req,res)=>{
+
+     obj = {
+        profile: "",
+    }
+
+    const user = await User.findOne({_id: req.params.id})
+    obj.profile = user
+
+    console.log(obj.profile);
+    res.render('profile', {obj})
+
+}

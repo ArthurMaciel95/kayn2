@@ -8,8 +8,13 @@
                     <h1>não há usuário bando de dados</h1>
                     <%} else {%>
                         <%obj.users.forEach( user=>{%>
+                            <a href="/profile/<%= user.id %>"></a>
                             <div class="user-container">
-                                <img src="./assets/img/avatar-male.jpg" alt="">
+                                <%if(!user.photo){%>
+                                    <img src="./assets/img/avatar-male.jpg" alt="">
+                                <%} else {%>
+                                    <img src="./upload/<%= user.photo%>" alt="">
+                                <%}%>
                                 <div>
                                     <h3>
                                         <%= user.name %>

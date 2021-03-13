@@ -1,0 +1,20 @@
+.wrap-form-sign{
+    display: flex;
+
+
+    .input-avatar{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column;
+
+        img{
+            border-radius: 50%;
+            width: 9rem;
+            height:9rem;
+            
+            object-fit: cover;
+        }
+    }
+
+}

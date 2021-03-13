@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
 
 const userSchema = new mongoose.Schema({
+    photo:{type:String},
     cpf: { type: String, required: true },
     name: { type: String, required: true },
     email: { type: String, required: true },

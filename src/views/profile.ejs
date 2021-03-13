@@ -1,0 +1,22 @@
+<%- include('include/header')%>
+
+    <main class="container-page-user">
+        <%- include('include/navbar')%>
+
+<section class="container-profile">
+      
+        <%if(!obj.profile.photo){%>
+            <img src="../../assets/img/avatar-male.jpg" alt="">
+        <%} else {%>
+            <img src="../../upload/<%= obj.profile.photo%>" alt="">
+        <%}%>
+        <h1>Username:<%= obj.profile.name%></h1>
+        <p>email:<%= obj.profile.email%></p>
+
+    
+</section>
+
+
+    </main>
+
+        <%- include('include/footer')%>
