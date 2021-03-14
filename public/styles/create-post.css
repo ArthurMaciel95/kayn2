@@ -754,6 +754,13 @@ button {
   font-size: 0.9rem;
 }
 
+.button-disabled {
+  -webkit-filter: grayscale(0.7);
+          filter: grayscale(0.7);
+  cursor: not-allowed;
+  color: gray;
+}
+
 .success {
   margin: 10px 0px;
   padding: 10px 15px;

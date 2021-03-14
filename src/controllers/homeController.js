@@ -9,6 +9,8 @@ exports.index = async (req, res) => {
         sumPost: "",
     };
 
+    
+
     dataIndex.tag = req.query.t;
 
     console.log(dataIndex.tag);

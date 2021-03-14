@@ -8,3 +8,9 @@ button{
     
     font-size: 0.9rem;
 }
+
+.button-disabled{
+    filter: grayscale(0.7);
+    cursor: not-allowed;
+    color: gray;
+}
