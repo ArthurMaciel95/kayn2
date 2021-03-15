@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 // const slug = require("slug");
 mongoose.Promise = global.Promise;
 
-// const ObjectId = mongoose.SchemaTypes.ObjectId;
+
 function data() {
     const date = new Date();
     const day = zeroBeforeLeft(date.getDate());
@@ -19,6 +19,7 @@ function zeroBeforeLeft(value) {
 }
 
 const postSchema = new mongoose.Schema({
+    photo:{ type:String},
     title: {
         type: String,
         trim: true,
@@ -32,10 +33,10 @@ const postSchema = new mongoose.Schema({
         required: "o corpo precisa ser preenchido",
     },
     tags: [String],
-    // author: {
-    //     type: ObjectId,
-    //     ref: "User",
-    // },
+    author: {
+        type: mongoose.SchemaTypes.ObjectId,
+        ref: "User",
+    },
     category: { type: String, trim: true, required: true },
     createDate: { type: String, default: data() },
 });

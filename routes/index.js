@@ -11,7 +11,10 @@ const uploadMiddleware =require('../src/middlewares/uploadMiddleware')
 router.get("/", homeController.index);
 
 router.get("/create-post", postController.post);
-router.post("/create-post", postController.postAction);
+router.post("/create-post",
+uploadMiddleware.upload,
+uploadMiddleware.resize,
+postController.postAction);
 
 router.get("/sign-up", userController.signUp);
 router.post("/sign-up",
@@ -23,7 +26,10 @@ router.get("/login", userController.login);
 router.post("/login", userController.loginAction);
 
 router.get("/post/edit/:_id", postController.edit);
-router.post("/post/edit/:_id", postController.editAction);
+router.post("/post/edit/:_id", 
+uploadMiddleware.upload,
+uploadMiddleware.resize,
+postController.editAction);
 
 router.get("/post/:_id", viewController.view);
 

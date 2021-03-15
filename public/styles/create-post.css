@@ -252,6 +252,59 @@ a {
   position: relative;
 }
 
+.new-input-label .wrap-form-sign .input-left {
+  position: relative;
+}
+
+.new-input-label .wrap-form-sign .input-left p {
+  color: #f9f9f9;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  position: absolute;
+  pointer-events: none;
+  -webkit-transform: translate(5%);
+          transform: translate(5%);
+  margin-left: 0.2rem;
+  padding: 0 0.4rem;
+  background-color: #181c27;
+  -webkit-transition: top 0.2s, font-size 0.2s, color 0.2s;
+  transition: top 0.2s, font-size 0.2s, color 0.2s;
+}
+
+.new-input-label .wrap-form-sign .input-left .new-input {
+  font-size: 1rem;
+  color: white;
+  background: #181c27;
+  padding: 0.7rem 1.5rem 0.7rem 1.2rem;
+  outline: none;
+  border-radius: 0.5rem;
+  width: 100%;
+  font-size: 1rem;
+  margin-top: 15px;
+  border: 2px solid #181c27;
+  -webkit-transition: border-color 0.2s;
+  transition: border-color 0.2s;
+}
+
+.new-input-label .wrap-form-sign .input-left .new-input:focus {
+  border-color: #62809e;
+  -webkit-transition: border-color 0.2s;
+  transition: border-color 0.2s;
+}
+
+.new-input-label .wrap-form-sign .input-left .new-input:focus + p, .new-input-label .wrap-form-sign .input-left .new-input:valid {
+  top: 0%;
+  font-size: 0.9rem;
+}
+
+.new-input-label .wrap-form-sign .input-left .new-input:not(:focus) + p {
+  color: #7a7a7a56;
+  top: 50%;
+  font-size: 1.1rem;
+}
+
 .new-input-label p {
   color: #f9f9f9;
   -webkit-user-select: none;
@@ -290,8 +343,7 @@ a {
   transition: border-color 0.2s;
 }
 
-.new-input-label .new-input:focus + p, .new-input-label .new-input:valid,
-.new-input-label .new-input:-webkit-autofill + p {
+.new-input-label .new-input:focus + p, .new-input-label .new-input:valid {
   top: 10%;
   font-size: 0.9rem;
 }
@@ -548,6 +600,7 @@ footer .footer-area a {
 .container-page-user .users .user-container {
   padding: 15px;
   border-radius: 4px;
+  position: relative;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -558,6 +611,14 @@ footer .footer-area a {
   border-left: #f52d5b 4px solid;
   -webkit-transition: background-color 0.5s ease;
   transition: background-color 0.5s ease;
+}
+
+.container-page-user .users .user-container a {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
 }
 
 .container-page-user .users .user-container:hover {

@@ -6,6 +6,17 @@
             <form class="create-post-form" method="POST" class="form-page-post">
 
                 <label class="new-input-label" for="title">
+                    <input class="new-input" type="file" name="photo" autocomplete="off">
+                    <% if(!obj.edit.photo) {%>
+                        <img src="../../public/upload/<%= obj.edit.photo %>" alt="">
+
+                    <%} else {%>
+
+                    <%}%>
+
+                </label>
+
+                <label class="new-input-label" for="title">
                     <input class="new-input" type="text" name="title" autocomplete="off" value="<%= obj.edit.title%>">
                     <p>Title</p>
                 </label>
