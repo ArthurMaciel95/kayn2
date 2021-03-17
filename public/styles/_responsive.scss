@@ -20,6 +20,10 @@
         }
     }
 
+    footer .footer-area{
+        flex-direction: column;
+    }
+
     .container-page-user{
         .users{
             grid-template-columns: repeat(2, 1fr);

@@ -1,13 +1,16 @@
 footer {
     display: flex;
     background-color: #181c27;
-    height: 40vh;
+    padding: 20px;
     margin-top: 50px;
     bottom: 0%;
     width: 100%;
     align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
 
     .footer-area {
+        padding: 20px;
         margin: 0 auto;
         width: 80vw;
         display: flex;
@@ -31,6 +34,19 @@ footer {
             color: $colorFontWhite;
             text-decoration: none;
             font-size: 0.9rem;
+            width: fit-content;
         }
+    }
+
+    small{
+        #footer-link{
+            color: $primaryColor;
+
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+
+        
     }
 }

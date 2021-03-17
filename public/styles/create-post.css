@@ -91,10 +91,9 @@ a {
 .container .checklist-posts .post .post-footer .post-tags {
   border-radius: 4px;
   color: #ebebeb;
-  font-weight: 700;
   font-family: inter, "Helvetica Nue", sans-serif;
-  font-size: 0.7rem;
-  padding: 4px 8px;
+  font-size: 0.8rem;
+  padding: 8px;
   margin-right: 5px;
 }
 
@@ -476,16 +475,23 @@ footer {
   display: -ms-flexbox;
   display: flex;
   background-color: #181c27;
-  height: 40vh;
+  padding: 20px;
   margin-top: 50px;
   bottom: 0%;
   width: 100%;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 footer .footer-area {
+  padding: 20px;
   margin: 0 auto;
   width: 80vw;
   display: -webkit-box;
@@ -523,6 +529,17 @@ footer .footer-area a {
   color: #ebebeb;
   text-decoration: none;
   font-size: 0.9rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+footer small #footer-link {
+  color: #f52d5b;
+}
+
+footer small #footer-link:hover {
+  text-decoration: underline;
 }
 
 .grid-column-4 {
@@ -833,6 +850,12 @@ button {
   .container .checklist-posts {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
+  }
+  footer .footer-area {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
   .container-page-user .users {
     -ms-grid-columns: (1fr)[2];
