@@ -111,9 +111,7 @@
              for(let i = 0; i < categories.length; i++){
                 if(category.innerText === categories[i]){
                     el.style.borderTop = `5px solid ${colorBorderTop[i]}`
-                    tags.forEach(tag =>{
-                        tag.style.backgroundColor = `${colorBorderTop[i]}`
-                    })
+                    tags.forEach(tag =>tag.style.backgroundColor = `${colorBorderTop[i]}`)
                 }
              }
 

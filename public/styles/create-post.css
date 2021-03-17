@@ -452,6 +452,15 @@ nav .menu li .search {
   color: #62809e;
 }
 
+nav .menu #profile-area img {
+  width: 50px;
+  height: 50px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
 nav .menu .search-area {
   position: relative;
   border-radius: 4px;

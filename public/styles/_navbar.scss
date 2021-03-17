@@ -53,6 +53,8 @@ nav {
                     transition: all 500ms ease;
                 }
             }
+
+            
             .search{
                 background-color: rgba(0, 0, 0, 0);
                 
@@ -62,6 +64,14 @@ nav {
                 border-bottom: 2px solid $colorFontSecondary;
                 color: $colorFontSecondary;
              }
+        }
+
+        #profile-area img{
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-right: 10px;
         }
     
      

@@ -9,7 +9,7 @@ exports.index = async (req, res) => {
         sumPost: "",
     };
 
-    
+    console.log(req.session)
 
     //  ESTÁ RECONHECENDO 
 

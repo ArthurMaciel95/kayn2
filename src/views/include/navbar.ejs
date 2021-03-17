@@ -15,6 +15,14 @@
                     <%= link.name%>
                 </a>
             </li>
-            <%})%>
+        <%})%>
+        
+
+        <% if (_user){%>
+            <li id="profile-area">
+                <img  class="profile-img"   src="../../../upload/<%= _user.photo %>" alt="<%= _user.name %>">
+                <p>Email: <%= _user.email %></p>
+            </li>
+        <%}%>
     </ul>
 </nav>
