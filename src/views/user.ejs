@@ -4,48 +4,47 @@
             <%- include('include/navbar')%>
 
 
-            <section class="menu-buttons">
             
+            
+            <%if(obj.users.length  === 0 ){%>
 
+                <h1>Don't have users in Database</h1>
                 
-                <%if(obj.users.length === 0) {%>
-                    <form action="/users/delete-all" method="POST">
-                        <button type="submit"  class="edit-post">Delete users</button>
-                    </form>
+            <%} else {%>
 
-                <%}%>
+            <%obj.users.forEach( user=>{%>
+
+            <section class="menu-buttons">
+                <form action="/users/delete-all" method="POST">
+                    <button type="submit"  class="edit-post">Delete users</button>
+                </form>
             </section>
-            <section class="users">
-                <%- include('include/message')%>
-                <%if(obj.users.length  === 0 ){%>
-                    <h1>Don't have users in Database</h1>
-                    <%} else {%>
-                        <%obj.users.forEach( user=>{%>
-                            <div class="user-container">
-                                <a href="/profile/<%= user._id %>" class="anchor-full"></a>
-                                <%if(!user.photo){%>
-                                    <img src="./assets/img/avatar-male.jpg" alt="">
-                                <%} else {%>
-                                    <img src="./upload/<%= user.photo%>" alt="">
-                                <%}%>
-                                <div>
-                                    <h3>
-                                        <%= user.name %>
-                                    </h3>
-                                    <p>
-                                        <%= user.email%>
-                                    </p>
+                
+                <section class="users">
+                    <div class="user-container">
+                        <a href="/profile/<%= user._id %>" class="anchor-full"></a>
+                            <%if(!user.photo){%>
+                                <img src="./assets/img/avatar-male.jpg" alt="">
+                                    <%} else {%>
+                                        <img src="./upload/<%= user.photo%>" alt="">
+                                    <%}%>
+                                    <div>
+                                        <h3>
+                                            <%= user.name %>
+                                        </h3>
+                                        <p>
+                                            <%= user.email%>
+                                        </p>
+                                    </div>
+
                                 </div>
+                </section>    
 
-                            </div>
+            <%})%>
 
-                            <%})%>
+        <%}%>
 
-                <%}%>
-
-            </section>
+</main>
 
 
-        </main>
-
-        <%- include('include/footer')%>
+<%- include('include/footer')%>

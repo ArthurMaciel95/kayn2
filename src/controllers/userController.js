@@ -119,6 +119,12 @@ exports.deleteAllUsers = async(req, res) =>{
     try{
         const allUser = await User.find();
 
+        if(allUser.length === 0 ){
+            req.flash('error', 'no have users in database')
+            res.redirect('/login')
+            return
+        }
+
         const usersForDeleting = allUser.map( user => user._id )
 
         const deleteProductsResponse = await User.deleteMany({ _id: { $in: usersForDeleting } } );
