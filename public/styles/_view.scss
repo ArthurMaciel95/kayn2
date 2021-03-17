@@ -2,8 +2,15 @@
     display: flex;
     flex-direction: column;
     background-color: $backgroundPost;
-    padding: 20px;
+    padding: 40px;
+    width: 90vw;
+    margin: 0 auto;
     border-radius: 4px;
+
+    .menu-view{
+        display: flex;
+        justify-content: flex-end;
+    }
 
     .paragraph-view {
         color: $colorFontSecondary;
@@ -42,4 +49,11 @@
     display: flex;
     width: fit-content;
     align-items: flex-end;
+    cursor: pointer;
+    margin: 0;
+
+    &:hover{
+        background-color: $backgroundPost;
+    }
 }
+

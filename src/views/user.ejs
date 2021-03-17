@@ -3,9 +3,22 @@
 <main class="container-page-user">
             <%- include('include/navbar')%>
 
+
+            <section class="menu-buttons">
+            
+
+                
+                <%if(obj.users.length === 0) {%>
+                    <form action="/users/delete-all" method="POST">
+                        <button type="submit"  class="edit-post">Delete users</button>
+                    </form>
+
+                <%}%>
+            </section>
             <section class="users">
-                <%if(!obj.users){%>
-                    <h1>não há usuário bando de dados</h1>
+                <%- include('include/message')%>
+                <%if(obj.users.length  === 0 ){%>
+                    <h1>Don't have users in Database</h1>
                     <%} else {%>
                         <%obj.users.forEach( user=>{%>
                             <div class="user-container">
@@ -28,7 +41,7 @@
 
                             <%})%>
 
-                                <%}%>
+                <%}%>
 
             </section>
 

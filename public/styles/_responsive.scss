@@ -2,6 +2,13 @@
     .container .checklist-posts {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .container-page-user{
+        .users{
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+    
 }
 
 @media (max-width: 850px) {
@@ -10,6 +17,12 @@
 
         .checklist-posts {
             grid-template-columns: 1fr;
+        }
+    }
+
+    .container-page-user{
+        .users{
+            grid-template-columns: repeat(2, 1fr);
         }
     }
 

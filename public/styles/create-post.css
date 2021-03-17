@@ -301,7 +301,7 @@ a {
 
 .new-input-label .wrap-form-sign .input-left .new-input:not(:focus) + p {
   color: #7a7a7a56;
-  top: 50%;
+  top: 45%;
   font-size: 1.1rem;
 }
 
@@ -420,6 +420,7 @@ nav .menu li a {
   display: flex;
   -webkit-transition: color 500ms ease;
   transition: color 500ms ease;
+  padding: 8px 16px;
 }
 
 nav .menu li a:hover::before {
@@ -447,7 +448,6 @@ nav .menu li a::before {
 
 nav .menu li .search {
   background-color: rgba(0, 0, 0, 0);
-  padding: 8px 0px;
   font-size: 1rem;
   outline: none;
   border: none;
@@ -585,6 +585,8 @@ footer .footer-area a {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .container-page-user .users {
@@ -650,8 +652,19 @@ footer .footer-area a {
       -ms-flex-direction: column;
           flex-direction: column;
   background-color: #1b202c;
-  padding: 20px;
+  padding: 40px;
+  width: 90vw;
+  margin: 0 auto;
   border-radius: 4px;
+}
+
+.container-view .menu-view {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
 .container-view .paragraph-view {
@@ -702,54 +715,12 @@ footer .footer-area a {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
+  cursor: pointer;
+  margin: 0;
 }
 
-@media (max-width: 1024px) {
-  .container .checklist-posts {
-    -ms-grid-columns: (1fr)[2];
-        grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 850px) {
-  .container {
-    width: 90vw;
-  }
-  .container .checklist-posts {
-    -ms-grid-columns: 1fr;
-        grid-template-columns: 1fr;
-  }
-  nav {
-    height: 25vh;
-  }
-  nav .logo {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    content: url("../assets/img/kyanMobile.png");
-    width: 80px;
-    height: 80px;
-    -o-object-fit: cover;
-       object-fit: cover;
-  }
-  .create-post-form {
-    width: 70%;
-  }
-  .create-post-form button {
-    padding: 10px;
-    background-color: #282f41;
-    color: #ebebeb;
-    width: 100%;
-  }
-  .tags-area {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    margin-top: 50px;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    gap: 5px;
-  }
+.edit-post:hover {
+  background-color: #1b202c;
 }
 
 .wrap-form-sign {
@@ -844,6 +815,62 @@ button {
   width: 9rem;
   height: 9rem;
   border-radius: 50%;
+}
+
+@media (max-width: 1024px) {
+  .container .checklist-posts {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+  .container-page-user .users {
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 850px) {
+  .container {
+    width: 90vw;
+  }
+  .container .checklist-posts {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  .container-page-user .users {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+  nav {
+    height: 25vh;
+  }
+  nav .logo {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    content: url("../assets/img/kyanMobile.png");
+    width: 80px;
+    height: 80px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .create-post-form {
+    width: 70%;
+  }
+  .create-post-form button {
+    padding: 10px;
+    background-color: #282f41;
+    color: #ebebeb;
+    width: 100%;
+  }
+  .tags-area {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-top: 50px;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    gap: 5px;
+  }
 }
 
 .create-post-form {

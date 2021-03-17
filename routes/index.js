@@ -38,7 +38,9 @@ router.post("/post/delete/:_id", postController.deletePost);
 router.get("/categories", categoriesController.categories);
 
 router.get("/users", userController.users);
+router.post('/users/delete-all', userController.deleteAllUsers)
 
 router.get('/profile/:id',userController.profile)
+
 
 module.exports = router;

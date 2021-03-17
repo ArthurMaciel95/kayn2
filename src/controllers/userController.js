@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const User = mongoose.model("User");
 const bcryptjs = require("bcryptjs");
-// const multer = require('multer')
+
 
 // REGISTER SECTION
 exports.signUp = async (req, res) => {
@@ -11,7 +11,7 @@ exports.signUp = async (req, res) => {
 exports.singUpAction = async (req, res) => {
     try {
         const userAreadyExists = await User.findOne({ email: req.body.email });
-
+    //USER EXISTS
         if (userAreadyExists) {
             req.flash('error', 'User Already Exist')
             res.status(404)
@@ -21,6 +21,9 @@ exports.singUpAction = async (req, res) => {
         console.error(e);
     }
 
+
+
+    // PASSWORD IS EQUAL
     if (req.body.password !== req.body['password-repeat']) {
         req.flash('error', 'The passwords fields need to be equal');
         res.status(412)
@@ -59,16 +62,21 @@ exports.loginAction = async (req, res) => {
         }
         
         const password = bcryptjs.compareSync(req.body.password, UserExist.password);
-        console.log(password);
+        
         if(!password){
             req.flash('error', 'Incorrect password')
             res.status(401)
             return res.redirect("/login");
-        } else {
-            req.flash('success', 'Success login')
-            res.status(202)
-            return res.redirect("/login");
         }
+
+        req.session.user = UserExist
+
+        console.log(req.session)
+
+        req.flash('success', 'Success login')
+        res.status(202)
+        return res.redirect("/categories");
+        
     }catch(e){
         console.log(e)
     }
@@ -86,6 +94,8 @@ exports.users = async (req, res) => {
     const AllUser = await User.find();
     obj.users = AllUser;
 
+    
+
     res.render("user", { obj });
 };
 
@@ -98,7 +108,24 @@ exports.profile= async(req,res)=>{
     const user = await User.findOne({_id: req.params.id})
     obj.profile = user
 
-    console.log(obj.profile);
+    
     res.render('profile', {obj})
+
+}
+
+exports.deleteAllUsers = async(req, res) =>{
+
+    //get all users in db
+    try{
+        const allUser = await User.find();
+
+        const usersForDeleting = allUser.map( user => user._id )
+
+        const deleteProductsResponse = await User.deleteMany({ _id: { $in: usersForDeleting } } );
+
+
+    }catch(err){
+        console.error(err);
+    }
 
 }

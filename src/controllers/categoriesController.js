@@ -11,10 +11,10 @@ exports.categories = async (req, res) => {
     const tags = Post.getCategoriesList();
     obj.categoriesTags = tags;
     const categoriesFilter =
-        obj.categories !== undefined ? { category: obj.categories } : {};
+        obj.categories !== undefined ? { category: obj.categoriesTags } : {};
 
     const searchCategories = await Post.find(categoriesFilter);
-    console.log(obj.categories);
+   
 
     res.render("category", { obj });
 };

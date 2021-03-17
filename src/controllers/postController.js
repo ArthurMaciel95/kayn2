@@ -10,8 +10,7 @@ exports.post = (req, res) => {
 exports.postAction = async (req, res) => {
     req.body.tags = req.body.tags.split(",").map((tag) => tag.trim());
     req.body.slug = slug(req.body.title);
-    console.log(req.body);
-
+    
     const post = new Post(req.body);
 
     try {

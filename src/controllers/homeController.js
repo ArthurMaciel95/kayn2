@@ -11,15 +11,18 @@ exports.index = async (req, res) => {
 
     
 
+    //  ESTÁ RECONHECENDO 
+
     dataIndex.tag = req.query.t;
 
-    console.log(dataIndex.tag);
+    
     const postFilter =
         dataIndex.tag !== undefined ? { tags: dataIndex.tag } : {};
 
     const tags = await Post.getTagsList();
-    const posts = await Post.find(postFilter);
+    const posts = await Post.find(postFilter).populate('author')
     const sumPost = await Post.countDocuments();
+    
 
     dataIndex.sumPost = sumPost;
     dataIndex.tags = tags;
