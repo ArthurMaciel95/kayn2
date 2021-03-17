@@ -41,7 +41,7 @@ exports.singUpAction = async (req, res) => {
         console.log(err);
     }
     req.flash('success', 'Successfully registered user')
-    res.redirect("/");
+    res.redirect("/login");
 };
 
 // LOGIN SECTION

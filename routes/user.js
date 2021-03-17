@@ -38,8 +38,7 @@ router.post("/post/delete/:_id",  userIsLogged.userLogged, postController.delete
 
 router.get("/categories",  userIsLogged.userLogged, categoriesController.categories);
 
-router.get("/users", userIsLogged.userLogged, userController.users);
-router.post('/users/delete-all', userIsLogged.userLogged, userController.deleteAllUsers)
+
 
 router.get('/profile/:id',userIsLogged.userLogged, userController.profile)
 

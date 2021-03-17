@@ -14,7 +14,8 @@ exports.categories = async (req, res) => {
         obj.categories !== undefined ? { category: obj.categoriesTags } : {};
 
     const searchCategories = await Post.find(categoriesFilter);
-   
+    
+    
 
     res.render("category", { obj });
 };

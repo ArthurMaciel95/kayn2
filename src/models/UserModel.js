@@ -13,7 +13,8 @@ const userSchema = new mongoose.Schema({
     city: { type: String, required: true },
     membership: { type: String, trim: true },
     create_at:{type:Date, default:Date.now()},
-    isBanned:{type:Boolean, default:false}
+    isBanned:{type:Boolean, default:false},
+    role:{type:String, default:'admin'}
 });
 
 module.exports = mongoose.model("User", userSchema);

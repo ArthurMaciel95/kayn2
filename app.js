@@ -1,7 +1,8 @@
 const express = require("express");
 const app = express();
 const path = require("path");
-const routes = require("./routes/index");
+const routes = require("./routes/user");
+const routesAdmin = require('./routes/admin')
 const morgan = require("morgan");
 const cors = require("cors");
 const helpers = require("./src/helpers/navbarLinks");
@@ -42,6 +43,7 @@ app.use(flash())
 
 app.use(middlewareGlobal);
 app.use("/", routes);
+app.use('/admin', routesAdmin)
 app.use(pageNotFound.page404)
 app.set("view engine", "ejs");
 
