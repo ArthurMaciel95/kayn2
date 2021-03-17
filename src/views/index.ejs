@@ -37,7 +37,7 @@
 
 
                                 <div class="post-header">
-                                    <h3>
+                                    <h3 id="text-category">
                                         <%= post.category%>
                                     </h3>
                                     <p>
@@ -79,5 +79,56 @@
 
             </section>
     </main>
+
+
+
+    <script>
+
+        
+        const postElement = document.querySelectorAll('.post')
+        
+        
+        
+        const colorBorderTop = ['#e66400', '#c54d52', '#b61ffe', '#f50c6f', '#4d23c2', '#2b9668', '#c54d52', '#c54d52']
+
+
+        postElement.forEach( el => {
+             let  category = el.querySelector('#text-category')
+            
+        if(category.innerText === 'Front-end') {
+            el.style.borderTop = `5px solid ${colorBorderTop[0]}`
+        }
+        if(category.innerText === 'Human Resources'){
+            el.style.borderTop  = `5px solid ${colorBorderTop[1]}`
+        }
+        if(category.innerText === 'Back-end'){
+            el.style.borderTop  = `5px solid ${colorBorderTop[2]}`
+        }
+        if(category.innerText === 'Desing'){
+            el.style.borderTop  = `5px solid ${colorBorderTop[3]}`
+        }
+        if(category.innerText === 'DevOps'){
+            el.style.borderTop  = `5px solid ${colorBorderTop[4]}`
+        }
+        if(category.innerText === 'General'){
+            el.style.borderTop  = `5px solid ${colorBorderTop[5]}`
+        }
+        if(category.innerText === 'Project Management'){
+            el.style.borderTop  = `5px solid ${colorBorderTop[6]}`
+        }
+        if(category.innerText === 'Marketing'){
+            el.style.borderTop  = `5px solid ${colorBorderTop[7]}`
+        }
+        if(category.innerText === 'Mobile'){
+            el.style.borderTop  = `5px solid ${colorBorderTop[8]}`
+        }
+
+
+        })
+
+        
+
+
+    </script>
 
     <%- include('include/footer')%>

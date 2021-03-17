@@ -45,7 +45,6 @@ a {
   background-color: #1b202c;
   border-radius: 4px;
   padding: 35px;
-  border-top: 5px solid #2d7df5;
 }
 
 .container .checklist-posts .post .post-header {
@@ -795,18 +794,18 @@ button {
 
 .success {
   margin: 10px 0px;
-  padding: 10px 15px;
+  padding: 8px 13px;
   border-radius: 5px;
-  border: solid 1px #1c7e1c;
-  background-color: #1eb31e;
+  border: solid 2px #1eb31e;
+  background-color: #1c7e1c;
 }
 
 .error {
   margin: 10px 0px;
-  padding: 10px 15px;
+  padding: 8px 13px;
   border-radius: 5px;
-  border: solid 1px #d34c42;
-  background-color: #922e27;
+  border: solid 2px #922e27;
+  background-color: #d34c42;
 }
 
 .container-profile img {
