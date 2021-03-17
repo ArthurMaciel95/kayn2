@@ -86,6 +86,7 @@
 
         
         const postElement = document.querySelectorAll('.post')
+
         
         
         
@@ -94,33 +95,62 @@
 
         postElement.forEach( el => {
              let  category = el.querySelector('#text-category')
+             let  tags = el.querySelectorAll('.post-tags')
+
             
         if(category.innerText === 'Front-end') {
             el.style.borderTop = `5px solid ${colorBorderTop[0]}`
+            tags.forEach(tag =>{
+                tag.style.backgroundColor = `${colorBorderTop[0]}`
+            })
         }
         if(category.innerText === 'Human Resources'){
             el.style.borderTop  = `5px solid ${colorBorderTop[1]}`
+            tags.forEach(tag =>{
+                tag.style.backgroundColor = `${colorBorderTop[1]}`
+            })
         }
         if(category.innerText === 'Back-end'){
             el.style.borderTop  = `5px solid ${colorBorderTop[2]}`
+            tags.forEach(tag =>{
+                tag.style.backgroundColor = `${colorBorderTop[2]}`
+            })
         }
         if(category.innerText === 'Desing'){
             el.style.borderTop  = `5px solid ${colorBorderTop[3]}`
+            tags.forEach(tag =>{
+                tag.style.backgroundColor = `${colorBorderTop[3]}`
+            })
         }
         if(category.innerText === 'DevOps'){
             el.style.borderTop  = `5px solid ${colorBorderTop[4]}`
+            tags.forEach(tag =>{
+                tag.style.backgroundColor = `${colorBorderTop[4]}`
+            })
         }
         if(category.innerText === 'General'){
             el.style.borderTop  = `5px solid ${colorBorderTop[5]}`
+            tags.forEach(tag =>{
+                tag.style.backgroundColor = `${colorBorderTop[5]}`
+            })
         }
         if(category.innerText === 'Project Management'){
             el.style.borderTop  = `5px solid ${colorBorderTop[6]}`
+            tags.forEach(tag =>{
+                tag.style.backgroundColor = `${colorBorderTop[6]}`
+            })
         }
         if(category.innerText === 'Marketing'){
             el.style.borderTop  = `5px solid ${colorBorderTop[7]}`
+            tags.forEach(tag =>{
+                tag.style.backgroundColor = `${colorBorderTop[7]}`
+            })
         }
         if(category.innerText === 'Mobile'){
             el.style.borderTop  = `5px solid ${colorBorderTop[8]}`
+            tags.forEach(tag =>{
+                tag.style.backgroundColor = `${colorBorderTop[8]}`
+            })
         }
 
 
