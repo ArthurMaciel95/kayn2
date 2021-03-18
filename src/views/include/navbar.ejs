@@ -19,10 +19,23 @@
         
 
         <% if (_user){%>
-            <li id="profile-area">
-                <img  class="profile-img"   src="../../../upload/<%= _user.photo %>" alt="<%= _user.name %>">
-                <p>Email: <%= _user.email %></p>
-            </li>
+            <a href="/profile/<%= _user._id%>"id="profile-area">
+
+                <%if(_user.photo){%>
+                    <img  class="profile-img"   src="../../../upload/<%= _user.photo %>" alt="<%= _user.name %>">
+
+                <%} else {%>
+                    <img  class="profile-img"   src="../../../assets/img/avatar-male.jpg" alt="<%= _user.name %>">
+
+                <%}%>
+                <%if(_user.role === 'admin'){%>
+                    <div class="role">Admin</div>
+                <%}%>
+                <div>
+                    <p><%= _user.name %></p>
+                    <p><%= _user.email %></p>
+                </div>
+            </a>
         <%}%>
     </ul>
 </nav>

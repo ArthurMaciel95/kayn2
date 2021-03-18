@@ -452,7 +452,51 @@ nav .menu li .search {
   color: #62809e;
 }
 
-nav .menu #profile-area img {
+nav .menu #profile-area {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0.8rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #f52d5b;
+}
+
+nav .menu #profile-area div {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+nav .menu #profile-area .role {
+  color: white;
+  font-size: 0.6rem;
+  font-weight: 700;
+  border-radius: 4px;
+  padding: 3px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  background: crimson;
+  position: absolute;
+  top: 47px;
+  left: 2px;
+}
+
+nav .menu #profile-area .profile-img {
   width: 50px;
   height: 50px;
   -o-object-fit: cover;

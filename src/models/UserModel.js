@@ -14,7 +14,7 @@ const userSchema = new mongoose.Schema({
     membership: { type: String, trim: true },
     create_at:{type:Date, default:Date.now()},
     isBanned:{type:Boolean, default:false},
-    role:{type:String, default:'admin'}
+    role:{type:String, default:'normal'}
 });
 
 module.exports = mongoose.model("User", userSchema);
