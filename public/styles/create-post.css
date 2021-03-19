@@ -467,7 +467,7 @@ nav .menu #profile-area {
   color: #f52d5b;
 }
 
-nav .menu #profile-area div {
+nav .menu #profile-area .profile-text {
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -476,9 +476,17 @@ nav .menu #profile-area div {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+nav .menu #profile-area .profile-text a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 nav .menu #profile-area .role {
@@ -877,12 +885,136 @@ button {
   background-color: #d34c42;
 }
 
-.container-profile img {
+.container-profile {
+  width: 60vw;
+  margin: 0 auto;
+}
+
+.container-profile .profile-area {
+  position: relative;
+  border-radius: 5px;
+}
+
+.container-profile .profile-area .header-profile {
+  background-image: url("../assets/img/wed-blog-shutterstock_1703194387_low_nwm.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #181c27;
+  height: 40vh;
+}
+
+.container-profile .profile-area .header-profile .image-area {
+  position: relative;
+}
+
+.container-profile .profile-area .header-profile .image-area .edit-photo {
+  background-color: #1b202c;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  bottom: 0px;
+  right: 0px;
+}
+
+.container-profile .profile-area .body-profile {
+  position: absolute;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  margin: 0 auto;
+  top: 255px;
+  left: 0;
+  z-index: 2;
+}
+
+.container-profile .profile-area .body-profile .info-area {
+  -webkit-box-shadow: 0px 3px 3px rgba(29, 29, 29, 0.4);
+          box-shadow: 0px 3px 3px rgba(29, 29, 29, 0.4);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-width: 30%;
+  padding: 25px;
+  border-radius: 5px;
+  background-color: #282f41;
+}
+
+.container-profile .profile-area .body-profile .info-area p {
+  margin-right: 4px;
+}
+
+.container-profile .profile-area .footer-profile {
+  background-color: #1b202c;
+  width: 100%;
+  position: absolute;
+  height: 60vh;
+  position: relative;
+  padding: 20px;
+}
+
+.container-profile .profile-area .footer-profile h2 {
+  padding-top: 100px;
+  color: #62809e;
+}
+
+.container-profile .profile-area .footer-profile table tbody tr td {
+  padding-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.container-profile .profile-area .footer-profile table tbody tr td p {
+  margin-left: 5px;
+}
+
+.container-profile .profile-area img {
   -o-object-fit: cover;
      object-fit: cover;
   width: 9rem;
   height: 9rem;
   border-radius: 50%;
+}
+
+.far {
+  font-size: 1.5rem;
 }
 
 @media (max-width: 1024px) {

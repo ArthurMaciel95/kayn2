@@ -1,8 +1,118 @@
 .container-profile{
-    img{
-        object-fit: cover;
-        width: 9rem;
-        height: 9rem;
-        border-radius: 50%;
+    width: 60vw;
+    margin: 0 auto;
+    .profile-area{
+        position: relative;
+        
+        border-radius: 5px;
+        .header-profile{
+            background-image: url('../assets/img/wed-blog-shutterstock_1703194387_low_nwm.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: $colorTagsHeader;
+            height:40vh;
+            
+
+            .image-area{
+                position: relative;
+                .edit-photo{
+                    background-color: $backgroundPost;
+                    position: absolute;
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    bottom: 0px;
+                    right: 0px;
+                    
+                }
+            }
+        }
+
+        .body-profile{
+            position: absolute;
+            text-align: center;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 100%;
+            margin: 0 auto;
+            top: 255px;
+            left: 0;
+            z-index: 2;
+            .info-area{
+                
+                box-shadow: 0px 3px 3px rgba(29, 29, 29, 0.4);
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                min-width: 30%;
+                padding: 25px;
+                border-radius: 5px;
+                
+                background-color:$backgroundPostHover;
+
+                p{
+                    margin-right: 4px;
+                }
+
+            }
+        }
+            
+
+            
+        
+        .footer-profile{
+           
+            background-color: $backgroundPost;
+            width: 100%;
+            position: absolute;
+            height: 60vh;
+            position: relative;
+            padding: 20px;
+
+            h2{
+                padding-top: 100px;
+                color: $colorFontSecondary;
+            }
+            table{
+                
+                
+
+                tbody{
+
+                tr{
+                    
+                    td{
+                        padding-top: 10px;
+                        display: flex;
+
+                        p{
+                            margin-left: 5px;
+                        }
+                    }
+                }
+            }
+            }
+        }
+
+        
+        img{
+            object-fit: cover;
+            width: 9rem;
+            height: 9rem;
+            border-radius: 50%;
+        }
     }
+}
+
+
+.far{
+    font-size: 1.5rem;
 }

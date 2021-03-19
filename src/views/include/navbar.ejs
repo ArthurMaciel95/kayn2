@@ -31,9 +31,9 @@
                 <%if(_user.role === 'admin'){%>
                     <div class="role">Admin</div>
                 <%}%>
-                <div>
+                <div class="profile-text">
                     <p><%= _user.name %></p>
-                    <p><%= _user.email %></p>
+                    <a href="/logout">logout</a>
                 </div>
             </a>
         <%}%>
