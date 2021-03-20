@@ -1,46 +1,78 @@
 <%- include('include/header')%>
 
-    <main class="container">
-        <%- include('include/navbar')%>
-            <form class="create-post-form" method="POST" enctype="multipart/form-data">
-                
-                <h3>Create an account now.</h3>
-                <small>just fill the fields for create your account</small>
+<main class="container">
+    <%- include('include/navbar')%>
+    <form class="create-post-form" method="POST" enctype="multipart/form-data">
+        <h3>Create an account now.</h3>
+        <small>just fill the fields for create your account</small>
 
-                <%- include('include/message')%>
-                <section class="wrap-form-sign">
-                    <div class="input-left">
-                        <label class="new-input-label" for="cpf">
-                            <input class="new-input" type="text" name="cpf" autocomplete="off" required>
-                            <p>cpf</p>
-                        </label>
-        
-                        <label class="new-input-label" >
-                            <input class="new-input" type="text" name="name" autocomplete="off" required >
-                            <p>name</p>
-                        </label>
-                        <label class="new-input-label">
-                            <input class="new-input" type="text" name="email" required autocomplete="off">
-                            <p>email</p>
-                        </label>
-                    </div>
-
-                    <div class="input-avatar">
-                        <img src="../../assets/img/avatar-male.jpg" alt="avatar-profile">
-                        <input type="file" name="photo">
-                    </div>
-                </section>
-                <label class="new-input-label">
-                    <input class="new-input" type="password" name="password" autocomplete="off" required>
-                    <p>password</p>
-                </label>
-                
-                <label class="new-input-label">
-                    <input class="new-input" type="password" name="password-repeat" autocomplete="off" required>
-                    <p>repeat password</p>
+        <%- include('include/message')%>
+        <section class="wrap-form-sign">
+            <div class="input-left">
+                <label class="new-input-label" for="cpf">
+                    <input
+                        class="new-input"
+                        type="text"
+                        name="cpf"
+                        autocomplete="off"
+                        required
+                    />
+                    <p>cpf</p>
                 </label>
 
-                <!-- <label for="cpf">Cpf:</label>
+                <label class="new-input-label">
+                    <input
+                        class="new-input"
+                        type="text"
+                        name="name"
+                        autocomplete="off"
+                        required
+                    />
+                    <p>name</p>
+                </label>
+                <label class="new-input-label">
+                    <input
+                        class="new-input"
+                        type="text"
+                        name="email"
+                        required
+                        autocomplete="off"
+                    />
+                    <p>email</p>
+                </label>
+            </div>
+
+            <div class="input-avatar">
+                <img
+                    src="../../assets/img/avatar-male.jpg"
+                    alt="avatar-profile"
+                />
+                <input type="file" name="photo" />
+            </div>
+        </section>
+        <label class="new-input-label">
+            <input
+                class="new-input"
+                type="password"
+                name="password"
+                autocomplete="off"
+                required
+            />
+            <p>password</p>
+        </label>
+
+        <label class="new-input-label">
+            <input
+                class="new-input"
+                type="password"
+                name="password-repeat"
+                autocomplete="off"
+                required
+            />
+            <p>repeat password</p>
+        </label>
+
+        <!-- <label for="cpf">Cpf:</label>
                 <input type="text" name="cpf">
                 <label for="name">Name:</label>
                 <input type="text" name="name">
@@ -48,16 +80,28 @@
                 <input type="text" name="email" maxlength="33">
                 <label for="password">Password:</label>
                 <input type="password" name="password" maxlength="12"> -->
-                <section class="wrap-form">
-                    <label class="new-input-label" for="birthday">
-                        <input class="new-input" type="date" name="birthday" autocomplete="off" required>
-                        <p>birthday</p>
-                    </label>
-                    <label class="new-input-label" for="country">
-                        <input class="new-input" type="text" name="country" autocomplete="off" required>
-                        <p>country</p>
-                    </label>
-                    <!-- <label for="birthday">
+        <section class="wrap-form">
+            <label class="new-input-label" for="birthday">
+                <input
+                    class="new-input"
+                    type="date"
+                    name="birthday"
+                    autocomplete="off"
+                    required
+                />
+                <p>birthday</p>
+            </label>
+            <label class="new-input-label" for="country">
+                <input
+                    class="new-input"
+                    type="text"
+                    name="country"
+                    autocomplete="off"
+                    required
+                />
+                <p>country</p>
+            </label>
+            <!-- <label for="birthday">
                         <p>Birthday:</p>
                         <input type="date" name="birthday" id="birthday">
                     </label>
@@ -66,39 +110,35 @@
                         <p>Country:</p>
                         <input type="text" name="country" id="country">
                     </label> -->
-
-                </section>
-                <section class="wrap-form">
-                    <!-- <label for="city">
+        </section>
+        <section class="wrap-form">
+            <!-- <label for="city">
                         <p>City:</p>
                         <input type="text" name="city" id="city">
                     </label> -->
 
-                    <label class="new-input-label" for="city">
-                        <input class="new-input" type="text" name="city" autocomplete="off">
-                        <p>city</p>
-                    </label>
+            <label class="new-input-label" for="city">
+                <input
+                    class="new-input"
+                    type="text"
+                    name="city"
+                    autocomplete="off"
+                />
+                <p>city</p>
+            </label>
 
-                    <label for="membership">
-                        <p>Membership:</p>
-                        <select name="membership" id="membership">
-                            <option value="Basic">Basic</option>
-                            <option value="Silver">Silver</option>
-                            <option value="Golden">Golden</option>
-                        </select>
-                    </label>
+            <label for="membership">
+                <p>Membership:</p>
+                <select name="membership" id="membership">
+                    <option value="Basic">Basic</option>
+                    <option value="Silver">Silver</option>
+                    <option value="Golden">Golden</option>
+                </select>
+            </label>
+        </section>
 
-                </section>
+        <button type="submit">Sign Up</button>
+    </form>
+</main>
 
-
-
-                <button type="submit">Sign Up</button>
-            </form>
-
-
-    </main>
-
-    <%- include('include/script/_button-disabled')%>
-
-
-    <%- include('include/footer')%>
+<%- include('include/script/_button-disabled')%> <%- include('include/footer')%>

@@ -458,12 +458,6 @@ nav .menu #profile-area {
   display: -ms-flexbox;
   display: flex;
   font-size: 0.8rem;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   color: #f52d5b;
 }
 
@@ -1015,6 +1009,38 @@ button {
 
 .far {
   font-size: 1.5rem;
+}
+
+.container-painel {
+  width: 80vw;
+  margin: 0 auto;
+}
+
+.container-painel .container-cards {
+  padding: 20px;
+}
+
+.container-painel .container-cards .card {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (4)[1fr];
+      grid-template-columns: repeat(1fr, 4);
+  gap: 10px;
+}
+
+.container-painel .container-cards .card .card-box {
+  width: 150px;
+  height: 150px;
+  background-color: #1b202c;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.container-painel .container-cards .card .card-box:hover {
+  background-color: #282f41;
 }
 
 @media (max-width: 1024px) {

@@ -1,16 +1,19 @@
 <%- include('./include/header')%>
 
-    <main class="container-page-user">
-        <%- include('./include/navbar')%>
+<main class="container-painel">
+    <%- include('./include/navbar')%>
 
-<section class="container-profile">
-    <%- include('./include/message')%>
-        <h1>PAINEL DE CONTROLE DO ADMINISTRADOR</h1>
+    <section class="container-cards">
+        <%- include('./include/message')%>
+        <h1>About</h1>
 
-    
-</section>
-
-
+        <section class="card">
+            <div class="card-box">users</div>
+            <div class="card-box">posts</div>
+            <div class="card-box">Tags</div>
+            <div class="card-box">Database</div>
+        </section>
+    </section>
 </main>
 
 <%- include('./include/footer')%>

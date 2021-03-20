@@ -1,7 +1,6 @@
 const mongoose = require("mongoose");
 const Post = mongoose.model("Post");
 const slug = require("slug");
-const moment = require("moment");
 
 exports.post = (req, res) => {
     res.render("create-post");
@@ -10,7 +9,7 @@ exports.post = (req, res) => {
 exports.postAction = async (req, res) => {
     req.body.tags = req.body.tags.split(",").map((tag) => tag.trim());
     req.body.slug = slug(req.body.title);
-    
+
     const post = new Post(req.body);
 
     try {
@@ -23,7 +22,7 @@ exports.postAction = async (req, res) => {
 
 exports.edit = async (req, res) => {
     const obj = {
-        edit: "",
+        edit: ""
     };
     try {
         const post = await Post.findOne({ _id: req.params._id });

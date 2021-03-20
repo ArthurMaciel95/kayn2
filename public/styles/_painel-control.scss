@@ -1,0 +1,31 @@
+.container-painel{
+    width: 80vw;
+    margin: 0 auto;
+    .container-cards{
+        padding: 20px;
+        h1{
+
+        }
+        .card{
+            width: fit-content;
+            
+            display: grid;
+            grid-template-columns: repeat(1fr, 4);
+            gap: 10px;
+
+
+            .card-box{
+                width: 150px;
+                height: 150px;
+                background-color: $backgroundPost;
+                padding: 20px;
+                border-radius: 5px;
+
+                &:hover{
+                    background-color: $backgroundPostHover;
+                }
+            }
+
+        }
+    }
+}

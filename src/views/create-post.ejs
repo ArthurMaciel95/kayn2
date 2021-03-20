@@ -1,60 +1,72 @@
 <%- include('include/header')%>
 
+<main class="container">
+    <%- include('include/navbar')%>
+    <form class="create-post-form" method="POST" class="form-page-post">
+        <label class="new-input-label" for="title">
+            <input
+                class="new-input"
+                type="file"
+                name="photo"
+                autocomplete="off"
+            />
+        </label>
 
-    <main class="container">
-        <%- include('include/navbar')%>
-            <form class="create-post-form" method="POST" class="form-page-post">
+        <label class="new-input-label" for="title">
+            <input
+                class="new-input"
+                type="text"
+                name="title"
+                autocomplete="off"
+                required
+            />
+            <p>Title</p>
+        </label>
+        <label class="new-input-label" for="subtitle">
+            <input
+                class="new-input"
+                type="text"
+                name="subtitle"
+                autocomplete="off"
+                required
+            />
+            <p>Subtitle</p>
+        </label>
 
-                <label class="new-input-label" for="title">
-                    <input class="new-input" type="file" name="photo" autocomplete="off">
-                    
+        <label for="message">Message:</label>
+        <textarea spellckeck="true" name="body" rows="7"> </textarea>
+        <div class="wrap-form">
+            <div class="break-line-tags">
+                <label class="new-input-label" for="tags">
+                    <input
+                        class="new-input"
+                        type="text"
+                        name="tags"
+                        autocomplete="off"
+                        required
+                    />
+                    <p>Tags</p>
                 </label>
 
-                <label class="new-input-label" for="title">
-                    <input class="new-input" type="text" name="title" autocomplete="off" required>
-                    <p>Title</p>
-                </label>
-                <label class="new-input-label" for="subtitle">
-                    <input class="new-input" type="text" name="subtitle" autocomplete="off" required>
-                    <p>Subtitle</p>
-                </label>
+                <small>use the "," to make more tags</small>
+            </div>
 
-                <label for="message">Message:</label>
-                <textarea spellckeck="true" name="body" rows="7"> </textarea>
-                <div class="wrap-form">
+            <select name="category" id="" required>
+                <option value="Front-end">Front-end</option>
+                <option value="Back-end">Back-end</option>
+                <option value="Desing">Desing</option>
+                <option value="DevOps">DevOps</option>
+                <option value="General">General</option>
+                <option value="Project Management">Project Management</option>
+                <option value="Desing">Desing</option>
+                <option value="Marketing">Marketing</option>
+                <option value="Mobile">Mobile</option>
+                <option value="Human Resources">Human Resources</option>
+            </select>
+        </div>
 
-                    <div class="break-line-tags">
-                        <label class="new-input-label" for="tags">
-                            <input class="new-input" type="text" name="tags" autocomplete="off" required>
-                            <p>Tags</p>
-                        </label>
+        <button type="submit">enviar</button>
+    </form>
+</main>
 
-                        <small>use the "," to make more tags</small>
-                    </div>
-
-                    <select name="category" id="" required>
-                        <option value="Front-end">Front-end</option>
-                        <option value="Back-end">Back-end</option>
-                        <option value="Desing">Desing</option>
-                        <option value="DevOps">DevOps</option>
-                        <option value="General">General</option>
-                        <option value="Project Management">Project Management</option>
-                        <option value="Desing">Desing</option>
-                        <option value="Marketing">Marketing</option>
-                        <option value="Mobile">Mobile</option>
-                        <option value="Human Resources">Human Resources</option>
-
-                    </select>
-
-                </div>
-
-                <button type="submit">enviar</button>
-            </form>
-
-
-    </main>
-
-    <%- include('include/script/_button-disabled')%>
-
-
-    <%- include('include/footer')%>
+<%- include('include/script/_button-disabled')%> <%- include('include/footer')%>

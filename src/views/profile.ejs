@@ -8,10 +8,10 @@
             <section class="header-profile">
                 <div class="image-area">
                     <%if(!obj.profile.photo){%>
-                        <img src="../../assets/img/avatar-male.jpg" alt="" />
-                        <%} else {%>
-                        <img src="../../upload/<%= obj.profile.photo%>" alt="" />
-                        <%}%>
+                    <img src="../../assets/img/avatar-male.jpg" alt="" />
+                    <%} else {%>
+                    <img src="../../upload/<%= obj.profile.photo%>" alt="" />
+                    <%}%>
                     <div class="edit-photo">
                         <i class="far fa-edit"></i>
                     </div>
@@ -21,7 +21,7 @@
             <section class="body-profile">
                 <div class="info-area">
                     <i class="far fa-comments"></i>
-                    <p>1.232 <span>Posts</span> </p>
+                    <p>1.232 <span>Posts</span></p>
                 </div>
                 <div class="info-area">
                     <i class="far fa-flag"></i>
@@ -38,13 +38,24 @@
                 <table>
                     <tbody>
                         <tr>
-                            <td>name: <p><%= obj.profile.name %></p></td>
+                            <td>
+                                name:
+                                <p><%= obj.profile.name %></p>
+                            </td>
                         </tr>
                         <tr>
-                            <td>Cpf: <p><%= obj.profile.cpf %></p></td>
+                            <td>
+                                Cpf:
+                                <p><%= obj.profile.cpf %></p>
+                            </td>
                         </tr>
                         <tr>
-                            <td >Create at: <p id="create-at"><%= obj.profile.create_at %></p></td>
+                            <td>
+                                Create at:
+                                <p id="create-at">
+                                    <%= obj.profile.create_at %>
+                                </p>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -54,31 +65,41 @@
 </main>
 
 <script>
-
     function zeroToLeft(value) {
-        return value > 10 ? value : `0${value}`
+        return value > 10 ? value : `0${value}`;
     }
 
-    const createAt = document.querySelector('#create-at')
+    const createAt = document.querySelector("#create-at");
 
-    const dateCreateAt = createAt.textContent
+    const dateCreateAt = createAt.textContent;
 
-    const date = new Date(dateCreateAt)
+    const date = new Date(dateCreateAt);
 
-    const monthName = [ 'janeiro', 'fevererio', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro']
+    const monthName = [
+        "janeiro",
+        "fevererio",
+        "março",
+        "abril",
+        "maio",
+        "junho",
+        "julho",
+        "agosto",
+        "setembro",
+        "outubro",
+        "novembro",
+        "dezembro"
+    ];
 
-    const day = (date.getDate())
-    const month = date.getMonth() 
-    const year = date.getFullYear()
-    const hour = zeroToLeft(date.getHours())
-    const minutes = zeroToLeft(date.getMinutes())
+    const day = date.getDate();
+    const month = date.getMonth();
+    const year = date.getFullYear();
+    const hour = zeroToLeft(date.getHours());
+    const minutes = zeroToLeft(date.getMinutes());
 
-    const stringDate = `${day} de ${monthName[month]}, ${year} às ${hour}:${minutes}`
-    
-    createAt.textContent = ''
-    createAt.textContent = stringDate
+    const stringDate = `${day} de ${monthName[month]}, ${year} às ${hour}:${minutes}`;
 
-
+    createAt.textContent = "";
+    createAt.textContent = stringDate;
 </script>
 
 <%- include('include/footer')%>

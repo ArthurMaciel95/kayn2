@@ -1,41 +1,40 @@
 <nav>
     <ul class="logo">
-        <li>
-            Logo
-        </li>
+        <li>Logo</li>
     </ul>
     <ul class="menu">
         <li class="search-area">
             <i class="icon-search"></i>
-            <input class="search" type="text" name="" id="">
+            <input class="search" type="text" name="" id="" />
         </li>
         <% h.forEach( link=> {%>
-            <li>
-                <a href="<%= link.slug %>">
-                    <%= link.name%>
-                </a>
-            </li>
-        <%})%>
-        
+        <li>
+            <a href="<%= link.slug %>"> <%= link.name%> </a>
+        </li>
+        <%})%> <% if (_user){%>
+        <a href="/profile/<%= _user._id%>" id="profile-area">
+            <%if(_user.photo){%>
+            <img
+                class="profile-img"
+                src="../../../upload/<%= _user.photo %>"
+                alt="<%= _user.name %>"
+            />
 
-        <% if (_user){%>
-            <a href="/profile/<%= _user._id%>"id="profile-area">
+            <%} else {%>
+            <img
+                class="profile-img"
+                src="../../../assets/img/avatar-male.jpg"
+                alt="<%= _user.name %>"
+            />
 
-                <%if(_user.photo){%>
-                    <img  class="profile-img"   src="../../../upload/<%= _user.photo %>" alt="<%= _user.name %>">
-
-                <%} else {%>
-                    <img  class="profile-img"   src="../../../assets/img/avatar-male.jpg" alt="<%= _user.name %>">
-
-                <%}%>
-                <%if(_user.role === 'admin'){%>
-                    <div class="role">Admin</div>
-                <%}%>
-                <div class="profile-text">
-                    <p><%= _user.name %></p>
-                    <a href="/logout">logout</a>
-                </div>
-            </a>
+            <%}%> <%if(_user.role === 'admin'){%>
+            <div class="role">Admin</div>
+            <%}%>
+            <div class="profile-text">
+                <p><%= _user.name %></p>
+                <a href="/logout">logout</a>
+            </div>
+        </a>
         <%}%>
     </ul>
 </nav>
