@@ -69,8 +69,6 @@ exports.loginAction = async (req, res) => {
 
         req.session.user = UserExist;
 
-        console.log(req.session);
-
         req.flash("success", "Success login");
         res.status(202);
         return res.redirect("/categories");

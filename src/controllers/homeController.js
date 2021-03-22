@@ -14,13 +14,18 @@ exports.index = async (req, res) => {
     const postFilter =
         dataIndex.tag !== undefined ? { tags: dataIndex.tag } : {};
 
-    const tags = await Post.getTagsList();
-    const posts = await Post.find(postFilter).populate("author");
+    const tagsPromise = await Post.getTagsList();
+    const postsPromise = await Post.find(postFilter).populate("author");
     const sumPost = await Post.countDocuments();
 
-    dataIndex.sumPost = sumPost;
-    dataIndex.tags = tags;
+    const [tags, posts, sum] = await Promise.all([
+        tagsPromise,
+        postsPromise,
+        sumPost
+    ]);
 
+    dataIndex.tags = tags;
+    dataIndex.sumPost = sum;
     dataIndex.posts = posts;
 
     res.render("index", { dataIndex });

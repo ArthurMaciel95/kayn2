@@ -12,7 +12,8 @@
             <a href="<%= link.slug %>"> <%= link.name%> </a>
         </li>
         <%})%> <% if (_user){%>
-        <a href="/profile/<%= _user._id%>" id="profile-area">
+        <section class="profile-navbar">
+            <a href="/profile/<%= _user._id%>" id="profile-area"></a>
             <%if(_user.photo){%>
             <img
                 class="profile-img"
@@ -34,7 +35,7 @@
                 <p><%= _user.name %></p>
                 <a href="/logout">logout</a>
             </div>
-        </a>
+        </section>
         <%}%>
     </ul>
 </nav>
