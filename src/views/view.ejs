@@ -1,42 +1,27 @@
 <%- include('include/header')%>
-    <main class="container-view">
-        <%- include('include/navbar')%>
-            <div class="menu-view">
-                <a href="/post/edit/<%=postData.data._id%>" class="edit-post">Edit</a>
-                <form action="/post/delete/<%=postData.data._id%>" method="POST">
-                    <button type="submit"  class="edit-post">Delete</button>
-                </form>
-            </div>
-            <section >
-                <h2>
-                    <%= postData.data.title %>
-                </h2>
-                <p class="paragraph-view">
-                    <%= postData.data.subtitle %>
-                </p>
+<main class="container-view">
+    <%- include('include/navbar')%>
+    <div class="menu-view">
+        <a href="/post/edit/<%=postData.data._id%>" class="edit-post">Edit</a>
+        <form action="/post/delete/<%=postData.data._id%>" method="POST">
+            <button type="submit" class="edit-post">Delete</button>
+        </form>
+    </div>
+    <section>
+        <h2><%= postData.data.title %></h2>
+        <p class="paragraph-view"><%= postData.data.subtitle %></p>
 
-                <section class="page-view-tags-area">
-                    <% postData.data.tags.forEach(tag=>{ %>
-                        <span class="tags">
-                            #<%= tag %>
-                        </span>
-                        <%})%>
-                    
-                </section>
+        <section class="page-view-tags-area">
+            <% postData.data.tags.forEach(tag=>{ %>
+            <span class="tags"> #<%= tag %> </span>
+            <%})%>
+        </section>
 
-                    <div class="image-container">
-                        <img src="../../upload/<%= postData.data.photo %>" alt="">
-                    </div>
-                <article>
-                    <%= postData.data.body %>
-                </article>
-            </section>
+        <div class="image-container">
+            <img src="../../upload/<%= postData.data.photo %>" alt="" />
+        </div>
+        <article><%= postData.data.body %></article>
+    </section>
+</main>
 
-
-
-
-
-
-    </main>
-
-    <%- include('include/footer')%>
+<%- include('include/footer')%>

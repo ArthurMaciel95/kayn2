@@ -8,12 +8,13 @@ exports.middlewareGlobal = (req, res, next) => {
 
     if (req.session.user) {
         res.locals.h = res.locals.h.filter((link) => link.logged === true);
-
+    } else {
+        res.locals.h = res.locals.h.filter((link) => link.guest === true);
+    }
+    if (req.session.user) {
         if (req.session.user.role === "admin") {
             res.locals.h = res.locals.h.filter((link) => link.isAdmin === true);
         }
-    } else {
-        res.locals.h = res.locals.h.filter((link) => link.guest === true);
     }
 
     next();

@@ -1,8 +1,13 @@
 <%- include('include/header')%> <%- include('include/navbar')%>
 
 <main class="container">
-    <form class="create-post-form" method="POST" class="form-page-post">
-        <label class="new-input-label" for="title">
+    <form
+        class="create-post-form"
+        method="POST"
+        class="form-page-post"
+        enctype="multipart/form-data"
+    >
+        <label class="new-input-label" for="photo">
             <input
                 class="new-input"
                 type="file"
@@ -10,9 +15,13 @@
                 autocomplete="off"
             />
             <% if(!obj.edit.photo) {%>
-            <img src="../../public/upload/<%= obj.edit.photo %>" alt="" />
+            <img
+                class="photo-post"
+                src="../../upload/<%= obj.edit.photo %>"
+                alt="<%= obj.edit.title%>"
+            />
 
-            <%} else {%> <%}%>
+            <%}%>
         </label>
 
         <label class="new-input-label" for="title">

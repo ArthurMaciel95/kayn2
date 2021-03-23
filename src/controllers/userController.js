@@ -66,8 +66,14 @@ exports.loginAction = async (req, res) => {
             res.status(401);
             return res.redirect("/login");
         }
+        if (UserExist.isBanned === true) {
+            req.flash("error", "You are banned!");
+            res.redirect("/login");
+            return;
+        }
 
         req.session.user = UserExist;
+        console.log(req.session.user);
 
         req.flash("success", "Success login");
         res.status(202);

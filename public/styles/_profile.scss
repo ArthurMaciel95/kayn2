@@ -95,6 +95,22 @@
 
                         p{
                             margin-left: 5px;
+                            color: $colorFontSecondary;
+                        }
+                        
+                    }
+                    #status{
+                        #status-banned{
+                            color: white;
+                            padding: 3px;
+                            background-color:red ;
+                            border-radius: 3px;
+                        }
+                        #status-active{
+                            color: white;
+                            padding: 3px;
+                            border-radius: 3px;
+                            background-color: royalblue;
                         }
                     }
                 }

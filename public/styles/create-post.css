@@ -409,9 +409,6 @@ nav .menu li a {
   position: relative;
   color: #62809e;
   text-decoration: none;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -452,7 +449,7 @@ nav .menu li .search {
   color: #62809e;
 }
 
-nav .menu #profile-area {
+nav .menu .profile-navbar {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -461,7 +458,7 @@ nav .menu #profile-area {
   color: #f52d5b;
 }
 
-nav .menu #profile-area .profile-text {
+nav .menu .profile-navbar .profile-text {
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -477,13 +474,13 @@ nav .menu #profile-area .profile-text {
       justify-content: space-around;
 }
 
-nav .menu #profile-area .profile-text a {
+nav .menu .profile-navbar .profile-text a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-nav .menu #profile-area .role {
+nav .menu .profile-navbar .role {
   color: white;
   font-size: 0.6rem;
   font-weight: 700;
@@ -498,7 +495,7 @@ nav .menu #profile-area .role {
   left: 2px;
 }
 
-nav .menu #profile-area .profile-img {
+nav .menu .profile-navbar .profile-img {
   width: 50px;
   height: 50px;
   -o-object-fit: cover;
@@ -867,8 +864,9 @@ button {
   margin: 10px 0px;
   padding: 8px 13px;
   border-radius: 5px;
-  border: solid 2px #1eb31e;
-  background-color: #1c7e1c;
+  border: solid 2px #1c7e1c;
+  background-color: #1eb31e;
+  color: #f7f7f7;
 }
 
 .error {
@@ -997,6 +995,21 @@ button {
 
 .container-profile .profile-area .footer-profile table tbody tr td p {
   margin-left: 5px;
+  color: #62809e;
+}
+
+.container-profile .profile-area .footer-profile table tbody tr #status #status-banned {
+  color: white;
+  padding: 3px;
+  background-color: red;
+  border-radius: 3px;
+}
+
+.container-profile .profile-area .footer-profile table tbody tr #status #status-active {
+  color: white;
+  padding: 3px;
+  border-radius: 3px;
+  background-color: royalblue;
 }
 
 .container-profile .profile-area img {
@@ -1021,13 +1034,10 @@ button {
 }
 
 .container-painel .container-cards .card {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (4)[1fr];
-      grid-template-columns: repeat(1fr, 4);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
   gap: 10px;
 }
 
@@ -1037,10 +1047,14 @@ button {
   background-color: #1b202c;
   padding: 20px;
   border-radius: 5px;
+  -webkit-transition: background-color  0.4s linear;
+  transition: background-color  0.4s linear;
 }
 
 .container-painel .container-cards .card .card-box:hover {
   background-color: #282f41;
+  -webkit-transition: background-color  0.4s linear;
+  transition: background-color  0.4s linear;
 }
 
 @media (max-width: 1024px) {

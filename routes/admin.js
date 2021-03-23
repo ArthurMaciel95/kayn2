@@ -4,6 +4,7 @@ const userIsLogged = require("../src/middlewares/isLogged");
 const userIsAdmin = require("../src/middlewares/isAdmin");
 const userController = require("../src/controllers/userController");
 const adminController = require("../src/controllers/adminController/adminController");
+const router = require("./user");
 
 routerAdmin.get(
     "/users",
@@ -24,6 +25,13 @@ routerAdmin.get(
     userIsLogged.userLogged,
     userIsAdmin.userAdmin,
     adminController.index
+);
+
+routerAdmin.get(
+    "/admin/users/banned/:_id",
+    userIsLogged.userLogged,
+    userIsAdmin.userAdmin,
+    adminController.banned
 );
 
 module.exports = routerAdmin;

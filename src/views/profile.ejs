@@ -57,6 +57,28 @@
                                 </p>
                             </td>
                         </tr>
+                        <tr>
+                            <td id="status">
+                                status: <% if(obj.profile.isBanned) {%>
+                                <p id="status-banned">Banned</p>
+                                <%} else {%>
+                                <p id="status-active">Active</p>
+                                <%}%>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                actions:
+                                <form
+                                    method="GET"
+                                    action="/admin/users/banned/<%= obj.profile._id %>"
+                                >
+                                    <button type="submit" class="edit-post">
+                                        ban
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
             </section>

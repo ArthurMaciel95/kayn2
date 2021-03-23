@@ -3,7 +3,7 @@ const Post = mongoose.model("Post");
 
 exports.index = async (req, res) => {
     let dataIndex = {
-        posts: [],
+        posts: {},
         tags: [],
         tag: "",
         sumPost: ""
@@ -14,9 +14,9 @@ exports.index = async (req, res) => {
     const postFilter =
         dataIndex.tag !== undefined ? { tags: dataIndex.tag } : {};
 
-    const tagsPromise = await Post.getTagsList();
-    const postsPromise = await Post.find(postFilter).populate("author");
-    const sumPost = await Post.countDocuments();
+    const tagsPromise = Post.getTagsList();
+    const postsPromise = Post.find(postFilter).populate("author");
+    const sumPost = Post.countDocuments();
 
     const [tags, posts, sum] = await Promise.all([
         tagsPromise,

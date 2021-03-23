@@ -8,8 +8,6 @@ exports.categories = async (req, res) => {
     };
     obj.categories = req.query.c;
 
-    const tags = Post.getCategoriesList();
-    obj.categoriesTags = tags;
     const categoriesFilter =
         obj.categories !== undefined ? { category: obj.categoriesTags } : {};
 
