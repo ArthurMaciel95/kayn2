@@ -16,11 +16,11 @@ const postSchema = new mongoose.Schema({
     body: {
         type: String,
         trim: true,
-        required: "o corpo precisa ser preenchido"
+        required: true
     },
     tags: [String],
     author: {
-        type: mongoose.SchemaTypes.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         ref: "User"
     },
     category: { type: String, trim: true, required: true },

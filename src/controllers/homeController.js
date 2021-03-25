@@ -3,7 +3,7 @@ const Post = mongoose.model("Post");
 
 exports.index = async (req, res) => {
     let dataIndex = {
-        posts: {},
+        posts: [],
         tags: [],
         tag: "",
         sumPost: ""
@@ -15,7 +15,17 @@ exports.index = async (req, res) => {
         dataIndex.tag !== undefined ? { tags: dataIndex.tag } : {};
 
     const tagsPromise = Post.getTagsList();
-    const postsPromise = Post.find(postFilter).populate("author");
+    const postsPromise = Post.find(postFilter).populate("author", "name");
+
+    // Story.
+    // findOne({ title: 'Casino Royale' }).
+    // populate('author').
+    // exec(function (err, story) {
+    //   if (err) return handleError(err);
+    //   console.log('The author is %s', story.author.name);
+    //   // prints "The author is Ian Fleming"
+    // });
+
     const sumPost = Post.countDocuments();
 
     const [tags, posts, sum] = await Promise.all([
@@ -25,8 +35,8 @@ exports.index = async (req, res) => {
     ]);
 
     dataIndex.tags = tags;
-    dataIndex.sumPost = sum;
     dataIndex.posts = posts;
+    dataIndex.sumPost = sum;
 
     res.render("index", { dataIndex });
 };

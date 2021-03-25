@@ -77,7 +77,7 @@ exports.loginAction = async (req, res) => {
 
         req.flash("success", "Success login");
         res.status(202);
-        return res.redirect("/categories");
+        return res.redirect("/");
     } catch (e) {
         console.log(e);
     }

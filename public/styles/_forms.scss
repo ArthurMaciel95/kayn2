@@ -18,3 +18,15 @@
     }
 
 }
+
+#no-account{
+    margin: 10px 0px;
+    a{
+        color: $colorFontSecondary;
+
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+    
+}

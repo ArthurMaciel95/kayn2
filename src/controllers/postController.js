@@ -12,6 +12,11 @@ exports.postAction = async (req, res) => {
 
     req.body.author = req.session.user._id;
 
+    
+
+    // https://dev.to/mkilmer/how-create-relationships-with-mongoose-and-node-js-with-real-example-43ei
+    //MUCH IMPORTANT
+
     const post = new Post(req.body);
 
     try {
@@ -39,7 +44,7 @@ exports.editAction = async (req, res) => {
     req.body.tags = req.body.tags.split(",").map((tag) => tag.trim());
 
     try {
-        const postUpdate = await Post.findOne(
+        const postUpdate = await Post.updateOne(
             { _id: req.params._id },
             req.body
         );

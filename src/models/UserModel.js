@@ -14,12 +14,7 @@ const userSchema = new mongoose.Schema({
     create_at: { type: Date, default: Date.now() },
     isBanned: { type: Boolean, default: false },
     role: { type: String, default: "normal" },
-    posts: [
-        {
-            type: mongoose.SchemaTypes.ObjectId,
-            ref: "Post"
-        }
-    ]
+    createDate: { type: Date, default: Date.now() }
 });
 
 module.exports = mongoose.model("User", userSchema);
