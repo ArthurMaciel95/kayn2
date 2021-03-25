@@ -71,7 +71,8 @@ exports.loginAction = async (req, res) => {
             res.redirect("/login");
             return;
         }
-
+        //NA HORA DE CRIAR O POST >
+        // AQUI ELE PEGAR O INFOMAÇÃO DE QUEM ESTÁ NA SESSÃO E JOGA NO AUTHOR
         req.session.user = UserExist;
         console.log(req.session.user);
 
