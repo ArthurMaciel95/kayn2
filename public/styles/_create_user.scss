@@ -86,7 +86,8 @@
             }
 
             &:focus + p,
-            &:valid{
+            &:valid + p,
+            &:not(:placeholder-shown) + p{
 
                 top: 10%;
                 font-size: 0.9rem;

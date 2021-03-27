@@ -1072,7 +1072,9 @@ button {
   transition: border-color 0.2s;
 }
 
-.create-user-form .new-input:focus + p, .create-user-form .new-input:valid {
+.create-user-form .new-input:focus + p,
+.create-user-form .new-input:valid + p,
+.create-user-form .new-input:not(:placeholder-shown) + p {
   top: 10%;
   font-size: 0.9rem;
 }
