@@ -235,21 +235,36 @@ a {
   margin-right: 4px;
 }
 
-p {
-  color: #f9f9f9;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  position: absolute;
-  pointer-events: none;
-  -webkit-transform: translate(5%);
-          transform: translate(5%);
-  margin-left: 0.2rem;
-  padding: 0 0.4rem;
-  background-color: #181c27;
-  -webkit-transition: top 0.2s, font-size 0.2s, color 0.2s;
-  transition: top 0.2s, font-size 0.2s, color 0.2s;
+.new-input {
+  font-size: 1rem;
+  color: white;
+  background: #181c27;
+  padding: 0.7rem 1.5rem 0.7rem 1.2rem;
+  outline: none;
+  border-radius: 0.5rem;
+  width: 100%;
+  font-size: 1rem;
+  margin-top: 15px;
+  border: 2px solid #181c27;
+  -webkit-transition: border-color 0.2s;
+  transition: border-color 0.2s;
+}
+
+.new-input:focus {
+  border-color: #62809e;
+  -webkit-transition: border-color 0.2s;
+  transition: border-color 0.2s;
+}
+
+.new-input:focus + p, .new-input:valid {
+  top: 10%;
+  font-size: 0.9rem;
+}
+
+.new-input:not(:focus) + p {
+  color: #7a7a7a56;
+  top: 45%;
+  font-size: 1.1rem;
 }
 
 .grid-column-2 {
@@ -1072,9 +1087,7 @@ button {
   transition: border-color 0.2s;
 }
 
-.create-user-form .new-input:focus + p,
-.create-user-form .new-input:valid + p,
-.create-user-form .new-input:not(:placeholder-shown) + p {
+.create-user-form .new-input:focus + p, .create-user-form .new-input:valid {
   top: 10%;
   font-size: 0.9rem;
 }
@@ -1085,7 +1098,8 @@ button {
   font-size: 1.1rem;
 }
 
-.create-user-form label {
+.create-user-form w
+label {
   color: #62809e;
 }
 
@@ -1264,7 +1278,6 @@ button {
       -ms-flex-pack: center;
           justify-content: center;
   padding: 20px;
-  background-color: #1b202c;
 }
 
 .container-create-post {

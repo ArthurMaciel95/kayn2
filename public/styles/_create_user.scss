@@ -86,8 +86,7 @@
             }
 
             &:focus + p,
-            &:valid + p,
-            &:not(:placeholder-shown) + p{
+            &:valid{
 
                 top: 10%;
                 font-size: 0.9rem;
@@ -98,7 +97,7 @@
                 top: 45%;
                 font-size: 1.1rem;
             }
-        }
+        }w
     label{
         color: $colorFontSecondary;
     }
@@ -121,7 +120,7 @@
         
         align-items: center;
         flex-wrap: wrap;
-    
+            
         .label {
             display: flex;
         }
