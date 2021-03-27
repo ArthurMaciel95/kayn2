@@ -54,6 +54,10 @@ a {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   margin-bottom: 15px;
 }
 
@@ -66,6 +70,12 @@ a {
   font-weight: 200;
   color: #62809e;
   font-size: 0.8rem;
+}
+
+.container .checklist-posts .post .post-header small {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .container .checklist-posts .post .post-body h3 {
@@ -225,35 +235,7 @@ a {
   margin-right: 4px;
 }
 
-.wrap-form {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-}
-
-.wrap-form .label {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.new-input-label {
-  position: relative;
-}
-
-.new-input-label .wrap-form-sign .input-left {
-  position: relative;
-}
-
-.new-input-label .wrap-form-sign .input-left p {
+p {
   color: #f9f9f9;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -268,87 +250,6 @@ a {
   background-color: #181c27;
   -webkit-transition: top 0.2s, font-size 0.2s, color 0.2s;
   transition: top 0.2s, font-size 0.2s, color 0.2s;
-}
-
-.new-input-label .wrap-form-sign .input-left .new-input {
-  font-size: 1rem;
-  color: white;
-  background: #181c27;
-  padding: 0.7rem 1.5rem 0.7rem 1.2rem;
-  outline: none;
-  border-radius: 0.5rem;
-  width: 100%;
-  font-size: 1rem;
-  margin-top: 15px;
-  border: 2px solid #181c27;
-  -webkit-transition: border-color 0.2s;
-  transition: border-color 0.2s;
-}
-
-.new-input-label .wrap-form-sign .input-left .new-input:focus {
-  border-color: #62809e;
-  -webkit-transition: border-color 0.2s;
-  transition: border-color 0.2s;
-}
-
-.new-input-label .wrap-form-sign .input-left .new-input:focus + p, .new-input-label .wrap-form-sign .input-left .new-input:valid {
-  top: 0%;
-  font-size: 0.9rem;
-}
-
-.new-input-label .wrap-form-sign .input-left .new-input:not(:focus) + p {
-  color: #7a7a7a56;
-  top: 45%;
-  font-size: 1.1rem;
-}
-
-.new-input-label p {
-  color: #f9f9f9;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  position: absolute;
-  pointer-events: none;
-  -webkit-transform: translate(5%);
-          transform: translate(5%);
-  margin-left: 0.2rem;
-  padding: 0 0.4rem;
-  background-color: #181c27;
-  -webkit-transition: top 0.2s, font-size 0.2s, color 0.2s;
-  transition: top 0.2s, font-size 0.2s, color 0.2s;
-}
-
-.new-input-label .new-input {
-  font-size: 1rem;
-  color: white;
-  background: #181c27;
-  padding: 0.7rem 1.5rem 0.7rem 1.2rem;
-  outline: none;
-  border-radius: 0.5rem;
-  width: 100%;
-  font-size: 1rem;
-  margin-top: 15px;
-  border: 2px solid #181c27;
-  -webkit-transition: border-color 0.2s;
-  transition: border-color 0.2s;
-}
-
-.new-input-label .new-input:focus {
-  border-color: #62809e;
-  -webkit-transition: border-color 0.2s;
-  transition: border-color 0.2s;
-}
-
-.new-input-label .new-input:focus + p, .new-input-label .new-input:valid {
-  top: 10%;
-  font-size: 0.9rem;
-}
-
-.new-input-label .new-input:not(:focus) + p {
-  color: #7a7a7a56;
-  top: 45%;
-  font-size: 1.1rem;
 }
 
 .grid-column-2 {
@@ -1077,6 +978,154 @@ button {
   transition: background-color  0.4s linear;
 }
 
+.create-user-form {
+  width: 60%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 auto;
+  background-color: #1b202c;
+  padding: 20px;
+  border-radius: 4px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.create-user-form small {
+  color: #62809e;
+}
+
+.create-user-form .wrap-form-sign .input-left {
+  position: relative;
+}
+
+.create-user-form .wrap-form-sign .input-left p {
+  position: absolute;
+  color: #f9f9f9;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  position: absolute;
+  pointer-events: none;
+  -webkit-transform: translate(5%);
+          transform: translate(5%);
+  margin-left: 0.2rem;
+  padding: 0 0.4rem;
+  background-color: #181c27;
+  -webkit-transition: top 0.2s, font-size 0.2s, color 0.2s;
+  transition: top 0.2s, font-size 0.2s, color 0.2s;
+}
+
+.create-user-form .wrap-form-sign .input-left .new-input-2 {
+  font-size: 1rem;
+  color: white;
+  background: #181c27;
+  padding: 0.7rem 1.5rem 0.7rem 1.2rem;
+  outline: none;
+  border-radius: 0.5rem;
+  width: 100%;
+  font-size: 1rem;
+  margin-top: 15px;
+  border: 2px solid #181c27;
+  -webkit-transition: border-color 0.2s;
+  transition: border-color 0.2s;
+}
+
+.create-user-form .wrap-form-sign .input-left .new-input-2:focus {
+  border-color: #62809e;
+  -webkit-transition: border-color 0.2s;
+  transition: border-color 0.2s;
+}
+
+.create-user-form .wrap-form-sign .input-left .new-input-2:focus + p, .create-user-form .wrap-form-sign .input-left .new-input-2:valid {
+  top: -30%;
+  font-size: 0.9rem;
+}
+
+.create-user-form .wrap-form-sign .input-left .new-input-2:not(:focus) + p {
+  color: #7a7a7a56;
+  top: 0%;
+  font-size: 1.1rem;
+}
+
+.create-user-form .new-input {
+  font-size: 1rem;
+  color: white;
+  background: #181c27;
+  padding: 0.7rem 1.5rem 0.7rem 1.2rem;
+  outline: none;
+  border-radius: 0.5rem;
+  width: 100%;
+  font-size: 1rem;
+  margin-top: 15px;
+  border: 2px solid #181c27;
+  -webkit-transition: border-color 0.2s;
+  transition: border-color 0.2s;
+}
+
+.create-user-form .new-input:focus {
+  border-color: #62809e;
+  -webkit-transition: border-color 0.2s;
+  transition: border-color 0.2s;
+}
+
+.create-user-form .new-input:focus + p, .create-user-form .new-input:valid {
+  top: 10%;
+  font-size: 0.9rem;
+}
+
+.create-user-form .new-input:not(:focus) + p {
+  color: #7a7a7a56;
+  top: 45%;
+  font-size: 1.1rem;
+}
+
+.create-user-form label {
+  color: #62809e;
+}
+
+.create-user-form .input-form,
+.create-user-form select,
+.create-user-form textarea {
+  padding: 10px 5px;
+  font-size: 0.9rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 4px;
+  background: #181c27;
+  border: none;
+  color: #62809e;
+  resize: vertical;
+}
+
+.create-user-form .wrap-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.create-user-form .wrap-form .label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.create-user-form .new-input-label {
+  position: relative;
+}
+
 @media (max-width: 1024px) {
   .container .checklist-posts {
     -ms-grid-columns: (1fr)[2];
@@ -1140,7 +1189,7 @@ button {
 }
 
 .create-post-form {
-  width: 50%;
+  width: 60%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

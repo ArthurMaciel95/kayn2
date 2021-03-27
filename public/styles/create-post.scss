@@ -10,10 +10,11 @@
 @import './message';
 @import './profile';
 @import './painel-control';
+@import './create_user';
 @import './responsive';
 
 .create-post-form {
-    width: 50%;
+    width: 60%;
     display: flex;
     margin: 0 auto;
     background-color: $backgroundPost;

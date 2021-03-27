@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const Post = mongoose.model("Post");
-const User = mongoose.model('User')
+
 
 exports.index = async (req, res) => {
     let dataIndex = {
@@ -17,17 +17,7 @@ exports.index = async (req, res) => {
 
     const tagsPromise = Post.getTagsList();
     const postsPromise = Post.find(postFilter).populate('author', 'name');
-    // const postAuthor = User.findOne({ $match:{ _id: postsPromise.author._id}})
-    // console.log(postAuthor)
-
-    // Story.
-    // findOne({ title: 'Casino Royale' }).
-    // populate('author').
-    // exec(function (err, story) {
-    //   if (err) return handleError(err);
-    //   console.log('The author is %s', story.author.name);
-    //   // prints "The author is Ian Fleming"
-    // });
+   
 
     const sumPost = Post.countDocuments();
 
@@ -40,7 +30,7 @@ exports.index = async (req, res) => {
     dataIndex.tags = tags;
     dataIndex.posts = posts;
     dataIndex.sumPost = sum;
-    console.log(posts);
+    
     res.render("index", { dataIndex });
 };
 

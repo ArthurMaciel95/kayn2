@@ -2,7 +2,12 @@
 
 <main class="container">
     <%- include('include/navbar')%>
-    <form class="create-post-form" method="POST" enctype="multipart/form-data">
+    <form
+        class="create-user-form"
+        method="POST"
+        autocomplete="off"
+        enctype="multipart/form-data"
+    >
         <h3>Create an account now.</h3>
         <small>just fill the fields for create your account</small>
 
@@ -11,18 +16,19 @@
             <div class="input-left">
                 <label class="new-input-label" for="cpf">
                     <input
-                        class="new-input"
+                        class="new-input-2"
                         type="text"
                         name="cpf"
                         autocomplete="off"
                         required
+                        id="cpf"
                     />
                     <p>cpf</p>
                 </label>
 
                 <label class="new-input-label">
                     <input
-                        class="new-input"
+                        class="new-input-2"
                         type="text"
                         name="name"
                         autocomplete="off"
@@ -32,7 +38,7 @@
                 </label>
                 <label class="new-input-label">
                     <input
-                        class="new-input"
+                        class="new-input-2"
                         type="text"
                         name="email"
                         required
@@ -72,14 +78,6 @@
             <p>repeat password</p>
         </label>
 
-        <!-- <label for="cpf">Cpf:</label>
-                <input type="text" name="cpf">
-                <label for="name">Name:</label>
-                <input type="text" name="name">
-                <label for="email">E-mail:</label>
-                <input type="text" name="email" maxlength="33">
-                <label for="password">Password:</label>
-                <input type="password" name="password" maxlength="12"> -->
         <section class="wrap-form">
             <label class="new-input-label" for="birthday">
                 <input
@@ -92,38 +90,20 @@
                 <p>birthday</p>
             </label>
             <label class="new-input-label" for="country">
-                <input
-                    class="new-input"
-                    type="text"
+                <select
                     name="country"
-                    autocomplete="off"
+                    id="country"
+                    class="new-input"
                     required
-                />
+                ></select>
+
                 <p>country</p>
             </label>
-            <!-- <label for="birthday">
-                        <p>Birthday:</p>
-                        <input type="date" name="birthday" id="birthday">
-                    </label>
-
-                    <label for="country">
-                        <p>Country:</p>
-                        <input type="text" name="country" id="country">
-                    </label> -->
         </section>
         <section class="wrap-form">
-            <!-- <label for="city">
-                        <p>City:</p>
-                        <input type="text" name="city" id="city">
-                    </label> -->
-
             <label class="new-input-label" for="city">
-                <input
-                    class="new-input"
-                    type="text"
-                    name="city"
-                    autocomplete="off"
-                />
+                <input class="new-input" name="city" id="city" />
+
                 <p>city</p>
             </label>
 
@@ -137,9 +117,9 @@
             </label>
             <label for="role">
                 <p>role:</p>
-                <select name="role" id="membership">
+                <select name="role" id="role">
                     <option value="normal">normal</option>
-                    <option value="Admin">Admin</option>
+                    <option value="Admin">admin</option>
                 </select>
             </label>
         </section>
@@ -147,5 +127,46 @@
         <button type="submit">Sign Up</button>
     </form>
 </main>
+
+<script>
+    buscaPais = async () => {
+        const url =
+            "https://servicodados.ibge.gov.br/api/v1/localidades/paises?orderBy=nome";
+        const response = await fetch(url)
+            .then((data) => data.json())
+            .then((body) => body);
+
+        return response;
+    };
+
+    preenchendoSelect = async () => {
+        const selectCountry = document.querySelector("#country");
+
+        const body = await buscaPais();
+
+        body.forEach((data) => {
+            let elementOption = document.createElement("option");
+            elementOption.innerText += data.nome;
+            elementOption.value = data.nome;
+            country.append(elementOption);
+        });
+    };
+
+    mascaraCpf = () => {
+        const cpfInput = document.querySelector("#cpf");
+
+        cpfInput.addEventListener("change", (e) => {
+            let el = e.target.value;
+            console.log(el);
+        });
+    };
+
+    const init = () => {
+        preenchendoSelect();
+        mascaraCpf();
+    };
+
+    init();
+</script>
 
 <%- include('include/script/_button-disabled')%> <%- include('include/footer')%>

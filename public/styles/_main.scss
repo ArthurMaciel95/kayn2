@@ -27,6 +27,7 @@
         .create-post-form{
             small{
                 color: $colorFontSecondary;
+                
             }
         }
 
@@ -42,7 +43,7 @@
                 .post-header {
                     display: flex;
                     justify-content: space-between;
-                
+                    flex-direction: column;
                     margin-bottom: 15px;
 
                     h3 {
@@ -54,6 +55,9 @@
                         font-weight: 200;
                         color: $colorFontSecondary;
                         font-size: 0.8rem;
+                    }
+                    small{
+                        display: flex;
                     }
                 }
 
@@ -193,70 +197,7 @@
         }
     }
 
-    .wrap-form {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-
-        .label {
-            display: flex;
-        }
-    }
-
-    .new-input-label {
-        position: relative;
-        .wrap-form-sign{
-            
-            .input-left{
-                position: relative;
-                p {
-                    color: #f9f9f9;
-                
-                    user-select: none;
-                    position: absolute;
-                    pointer-events: none;
-                    transform: translate(5%);
-                    margin-left: 0.2rem;
-                    padding: 0 0.4rem;
-                    background-color: $colorTagsHeader;
-                    transition: top 0.2s, font-size 0.2s, color 0.2s;
-                }
-        
-                .new-input {
-                    font-size: 1rem;
-                    color: white;
-                    background:$colorTagsHeader;
-                    padding: 0.7rem 1.5rem 0.7rem 1.2rem;
-                    outline: none;
-                    border-radius: 0.5rem;
-                    width: 100%;
-                    font-size: 1rem;
-                    margin-top: 15px;
-                    border: 2px solid $colorTagsHeader;
-                
-                    transition: border-color 0.2s;
-        
-                    &:focus{
-                        border-color: $colorFontSecondary;
-                        transition: border-color 0.2s;
-                    }
-        
-                    &:focus + p,
-                    &:valid{
-
-                        top: 0%;
-                        font-size: 0.9rem;
-                    }
-        
-                    &:not(:focus) + p{
-                        color: #7a7a7a56;
-                        top: 45%;
-                        font-size: 1.1rem;
-                    }
-                }
-            }
-        }
+    
 
         p {
             color: #f9f9f9;
@@ -271,38 +212,38 @@
             transition: top 0.2s, font-size 0.2s, color 0.2s;
         }
 
-        .new-input {
-            font-size: 1rem;
-            color: white;
-            background:$colorTagsHeader;
-            padding: 0.7rem 1.5rem 0.7rem 1.2rem;
-            outline: none;
-            border-radius: 0.5rem;
-            width: 100%;
-            font-size: 1rem;
-            margin-top: 15px;
-            border: 2px solid $colorTagsHeader;
+        // .new-input {
+        //     font-size: 1rem;
+        //     color: white;
+        //     background:$colorTagsHeader;
+        //     padding: 0.7rem 1.5rem 0.7rem 1.2rem;
+        //     outline: none;
+        //     border-radius: 0.5rem;
+        //     width: 100%;
+        //     font-size: 1rem;
+        //     margin-top: 15px;
+        //     border: 2px solid $colorTagsHeader;
         
-            transition: border-color 0.2s;
+        //     transition: border-color 0.2s;
 
-            &:focus{
-                border-color: $colorFontSecondary;
-                transition: border-color 0.2s;
-            }
+        //     &:focus{
+        //         border-color: $colorFontSecondary;
+        //         transition: border-color 0.2s;
+        //     }
 
-            &:focus + p,
-            &:valid{
-                top: 10%;
-                font-size: 0.9rem;
-            }
+        //     &:focus + p,
+        //     &:valid{
+        //         top: 10%;
+        //         font-size: 0.9rem;
+        //     }
 
-            &:not(:focus) + p{
-                color: #7a7a7a56;
-                top: 45%;
-                font-size: 1.1rem;
-            }
-        }
-    }
+        //     &:not(:focus) + p{
+        //         color: #7a7a7a56;
+        //         top: 45%;
+        //         font-size: 1.1rem;
+        //     }
+        // }
+    
 
     .grid-column-2 {
         grid-template-columns: repeat(2, 1fr);

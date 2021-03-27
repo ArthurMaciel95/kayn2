@@ -1,0 +1,134 @@
+.create-user-form {
+    width: 60%;
+    display: flex;
+    margin: 0 auto;
+    background-color: $backgroundPost;
+    padding: 20px;
+    border-radius: 4px;
+    flex-direction: column;
+
+    h3{
+
+    }
+    small{
+        color: $colorFontSecondary;
+
+    }
+     .wrap-form-sign{
+            
+            .input-left{
+                position: relative;
+                p {
+                    position: absolute;
+                    color: #f9f9f9;
+                    
+                    user-select: none;
+                    position: absolute;
+                    pointer-events: none;
+                    transform: translate(5%);
+                    margin-left: 0.2rem;
+                    padding: 0 0.4rem;
+                    background-color: $colorTagsHeader;
+                    transition: top 0.2s, font-size 0.2s, color 0.2s;
+                }
+        
+                .new-input-2 {
+                    font-size: 1rem;
+                    color: white;
+                    background:$colorTagsHeader;
+                    padding: 0.7rem 1.5rem 0.7rem 1.2rem;
+                    outline: none;
+                    border-radius: 0.5rem;
+                    width: 100%;
+                    font-size: 1rem;
+                    margin-top: 15px;
+                    border: 2px solid $colorTagsHeader;
+                
+                    transition: border-color 0.2s;
+        
+                    &:focus{
+                        border-color: $colorFontSecondary;
+                        transition: border-color 0.2s;
+                    }
+        
+                    &:focus + p,
+                    &:valid{
+    
+                        top: -30%;
+                        font-size: 0.9rem;
+                    }
+        
+                    &:not(:focus) + p{
+                        color: #7a7a7a56;
+                        top: 0%;
+                        font-size: 1.1rem;
+                    }
+                }
+            }
+        }
+        .new-input {
+            font-size: 1rem;
+            color: white;
+            background:$colorTagsHeader;
+            padding: 0.7rem 1.5rem 0.7rem 1.2rem;
+            outline: none;
+            border-radius: 0.5rem;
+            width: 100%;
+            font-size: 1rem;
+            margin-top: 15px;
+            border: 2px solid $colorTagsHeader;
+        
+            transition: border-color 0.2s;
+
+            &:focus{
+                border-color: $colorFontSecondary;
+                transition: border-color 0.2s;
+            }
+
+            &:focus + p,
+            &:valid{
+
+                top: 10%;
+                font-size: 0.9rem;
+            }
+
+            &:not(:focus) + p{
+                color: #7a7a7a56;
+                top: 45%;
+                font-size: 1.1rem;
+            }
+        }
+    label{
+        color: $colorFontSecondary;
+    }
+
+    .input-form,
+    select,
+    textarea {
+        padding: 10px 5px;
+        font-size: 0.9rem;
+        display: flex;
+        align-items: center;
+        border-radius: 4px;
+        background:$colorTagsHeader;
+        border: none;
+        color: $colorFontSecondary;
+        resize: vertical;
+    }
+    .wrap-form {
+        display: flex;
+        
+        align-items: center;
+        flex-wrap: wrap;
+    
+        .label {
+            display: flex;
+        }
+    }
+    
+    .new-input-label {
+        position: relative;
+       
+    }
+}
+

@@ -7,7 +7,7 @@ mongoose
     .connect(process.env.DATABASE, {
         useFindAndModify: false,
         useNewUrlParser: true,
-        useUnifiedTopology: true,
+        useUnifiedTopology: true
     })
     .then(() => {
         console.log("conectado à base de dados");
